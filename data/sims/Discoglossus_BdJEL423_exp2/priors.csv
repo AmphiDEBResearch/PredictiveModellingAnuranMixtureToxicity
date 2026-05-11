@@ -1,0 +1,7 @@
+param,dist
+pth.gamma,"Truncated(Normal{Float64}(μ=0.1, σ=0.1); lower=0.0, upper=Inf)"
+pth.eta,"Truncated(Normal{Float64}(μ=100.0, σ=50.0); lower=0.0, upper=Inf)"
+pth.sigma1,"Truncated(Normal{Float64}(μ=0.0016, σ=0.016); lower=0.0, upper=Inf)"
+spc.Chi,"Hyperdist(var""#217#219""(), Truncated(Normal{Float64}(μ=1.0, σ=1.0); lower=0.5, upper=2.0))"
+spc.E_P[2],"Truncated(Normal{Float64}(μ=15000.0, σ=7500.0); lower=10.0, upper=100000.0)"
+spc.B_P[2],"Truncated(Normal{Float64}(μ=2.0, σ=2.0); lower=2.0, upper=4.0)"

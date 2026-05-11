@@ -1,0 +1,4 @@
+n,q_dist,t_max,priors
+10000,0.1,5,"Truncated(Normal{Float64}(μ=1.0, σ=1.0); lower=0.0, upper=1.0)"
+10000,0.1,5,"Truncated(Normal{Float64}(μ=0.003, σ=0.3); lower=3.0e-5, upper=1.0)"
+10000,0.1,5,"Truncated(Normal{Float64}(μ=2.0, σ=8.0); lower=1.0, upper=10.0)"

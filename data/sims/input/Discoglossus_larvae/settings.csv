@@ -1,0 +1,12 @@
+n,q_dist,t_max,priors
+25000,0.1,6,"Hyperdist(var""#738#739""(), Truncated(Normal{Float64}(μ=0.1, σ=0.1); lower=0.0, upper=Inf))"
+25000,0.1,6,"Truncated(Normal{Float64}(μ=1.6, σ=0.15); lower=0.0, upper=Inf)"
+25000,0.1,6,"Truncated(Normal{Float64}(μ=0.2, σ=0.05); lower=0.0, upper=Inf)"
+25000,0.1,6,"Truncated(Normal{Float64}(μ=0.75, σ=0.75); lower=0.0, upper=1.0)"
+25000,0.1,6,"Truncated(Normal{Float64}(μ=9.0, σ=4.5); lower=0.0, upper=Inf)"
+25000,0.1,6,"Truncated(Normal{Float64}(μ=0.5, σ=0.5); lower=0.0, upper=1.0)"
+25000,0.1,6,"Truncated(Normal{Float64}(μ=0.05, σ=0.05); lower=0.0, upper=Inf)"
+25000,0.1,6,"Truncated(Normal{Float64}(μ=0.8, σ=0.4); lower=0.2, upper=1.0)"
+25000,0.1,6,"Truncated(Normal{Float64}(μ=0.94, σ=0.004); lower=0.0, upper=1.0)"
+25000,0.1,6,"Truncated(Normal{Float64}(μ=0.84, σ=0.042); lower=0.0, upper=0.93)"
+25000,0.1,6,"Truncated(Normal{Float64}(μ=20.0, σ=1.0); lower=15.0, upper=25.0)"

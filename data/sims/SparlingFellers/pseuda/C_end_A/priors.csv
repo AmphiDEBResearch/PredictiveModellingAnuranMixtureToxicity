@@ -1,0 +1,4 @@
+param,dist
+"spc.KD[1,3]","Truncated(Normal{Float64}(μ=1.0, σ=1.0); lower=0.001, upper=1.0)"
+"spc.E[1,3]","Truncated(Normal{Float64}(μ=7.8100000000000005, σ=78.10000000000001); lower=0.08000000000000002, upper=Inf)"
+"spc.B[1,3]","Truncated(Normal{Float64}(μ=2.0, σ=20.0); lower=0.5, upper=Inf)"

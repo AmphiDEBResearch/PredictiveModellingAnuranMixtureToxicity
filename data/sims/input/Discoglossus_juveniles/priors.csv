@@ -1,0 +1,6 @@
+param,dist
+spc.dI_max_juv,"Truncated(Normal{Float64}(μ=1.9429184635405865, σ=1.9429184635405865); lower=0.0, upper=Inf)"
+spc.eta_AS_juv,"Truncated(Normal{Float64}(μ=0.06, σ=0.06); lower=0.0, upper=1.0)"
+spc.H_p,"Truncated(Normal{Float64}(μ=2000.0, σ=200.0); lower=0.0, upper=Inf)"
+spc.k_J_juv,Dirac{Float64}(value=0.02)
+spc.eta_AR,"Truncated(Normal{Float64}(μ=0.5, σ=0.2); lower=0.0, upper=1.0)"

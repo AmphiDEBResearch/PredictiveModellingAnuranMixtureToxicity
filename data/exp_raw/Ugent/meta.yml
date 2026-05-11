@@ -1,0 +1,31 @@
+- key: exp1_metamorphosis_timing
+  path: exp1/metamorphosis_timing.csv
+  columns:
+    - name: treatment_bd
+      unit: categorical
+      description: assignment of Bd treatment (uninfected vs JEL423)
+    - name: treatment_24D
+      unit: mg/L
+      description: 2,4D-exposure. exposure ocurred for 5d during late larval development, starting 26d after hatching
+- key: exp2_juveniles
+  path: exp2/juveniles.csv
+  columns:
+    - name: t_since_mm
+      unit: d
+      description: time since the first individual has reached Gosner stage 42
+    - name: weight_mg
+      unit: mg
+      description: total body weight (wet mass)
+- key: exp2_bdloads
+  path: exp2/bdloads_JEL423.csv
+  columns:
+    - name: treatment_bd
+      unit: categorical
+      description: indication of bd treatment (uninfected vs JEL423)
+    - name: pretreatment_24D
+      unit: mg/L
+      description: exposure level of 2,4-D to aquatic stages during exp1
+    - name: load_mean
+      unit: count
+      description: mean measured Bd load. loads were measured in leg 10d after exposure.
+  

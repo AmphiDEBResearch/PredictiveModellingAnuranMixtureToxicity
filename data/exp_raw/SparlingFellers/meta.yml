@@ -1,0 +1,46 @@
+
+description: |
+  Chlorpyrifos effects in Pseudacris regilla and Rana bolyii. 
+  Animals were exposed from Gosner 25/26 until G42. 
+  Growth was measured in tadpoles at 2-3 time points. 
+  Body mass and timing of G46 were measured.
+  All data points are averages. 
+
+  source: https://doi.org/10.1897/08-336.1 
+
+data_keys
+  - key: growth
+    type: table
+    file: growth.csv
+    variables:
+      - name: species
+        unit: - 
+        description: indicator of test species; pseuda = pseudacris regilla, rana = rana boylii 
+      - name: t_exp
+        unit: d
+        description: experimental time. experiment starts with Gosner stage 25-26
+      - name: wetmass
+        unit: g
+        description: total body mass
+      - name: C_cpf
+        unit: mug/L
+        description: chlorpyrifos exposure concentration
+      - name: C_endo
+        unit: mug/L
+        description: endosulfan exposure concentration
+  - key: metamorphs
+    - name: species
+      unit: - 
+      description: indicator of test species; pseuda = pseudacris regilla, rana = rana boylii 
+    - name: C_cpf
+      unit: mug/L
+      description: chlorpyrifos exposure concentration
+    - name: C_endo
+      unit: mug/L
+      description: endosulfan exposure concentration
+    - name: t_exp_G42
+      unit: - 
+      description: time to reach gosner stage 42, in experimental time (i.e. since Gosner 25/26)
+    - name: wetmass_G46_g
+      unit: g
+      description: total body mass at gosner stage 46

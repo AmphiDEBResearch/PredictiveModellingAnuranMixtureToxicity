@@ -1,0 +1,93 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Beaumont et~al.()Beaumont, Cornuet, Marin and
+  Robert}]{beaumontAdaptiveApproximateBayesian2009}
+\bibinfo{author}{Beaumont, M.A.}, \bibinfo{author}{Cornuet, J.M.},
+  \bibinfo{author}{Marin, J.M.}, \bibinfo{author}{Robert, C.P.}, .
+\newblock \bibinfo{title}{Adaptive approximate {{Bayesian}} computation}
+  \bibinfo{volume}{96}, \bibinfo{pages}{983--990}.
+\newblock \DOIprefix\doi{10.1093/biomet/asp052}.
+%Type = Article
+\bibitem[{Glaberman et~al.()Glaberman, Kiwiet and
+  Aubee}]{glabermanEvaluatingRoleFish2019}
+\bibinfo{author}{Glaberman, S.}, \bibinfo{author}{Kiwiet, J.},
+  \bibinfo{author}{Aubee, C.B.}, .
+\newblock \bibinfo{title}{Evaluating the role of fish as surrogates for
+  amphibians in pesticide ecological risk assessment} \bibinfo{volume}{235},
+  \bibinfo{pages}{952--958}.
+\newblock \DOIprefix\doi{10.1016/j.chemosphere.2019.06.166}.
+%Type = Article
+\bibitem[{Hansul et~al.()Hansul, Gonzalez-Lopez, Ortiz-Santaliestra and
+  Focks}]{hansulDynamicModellingAmphibian}
+\bibinfo{author}{Hansul, S.}, \bibinfo{author}{Gonzalez-Lopez, S.},
+  \bibinfo{author}{Ortiz-Santaliestra, M.}, \bibinfo{author}{Focks, A.}, .
+\newblock \bibinfo{title}{Dynamic modelling of amphibian life-history with
+  account for individual variability in developmental rates} .
+%Type = Article
+\bibitem[{Jager()}]{jagerRevisitingSimplifiedDEBtox2020}
+\bibinfo{author}{Jager, T.}, .
+\newblock \bibinfo{title}{Revisiting simplified {{DEBtox}} models for analysing
+  ecotoxicity data} \bibinfo{volume}{416}, \bibinfo{pages}{108904}.
+\newblock \DOIprefix\doi{10.1016/j.ecolmodel.2019.108904}.
+%Type = Article
+\bibitem[{Jager et~al.()Jager, Martin and
+  Zimmer}]{jagerDEBkissQuestSimplest2013}
+\bibinfo{author}{Jager, T.}, \bibinfo{author}{Martin, B.T.},
+  \bibinfo{author}{Zimmer, E.I.}, .
+\newblock \bibinfo{title}{{{DEBkiss}} or the quest for the simplest generic
+  model of animal life history} \bibinfo{volume}{328}, \bibinfo{pages}{9--18}.
+\newblock \DOIprefix\doi{10.1016/j.jtbi.2013.03.011}.
+%Type = Article
+\bibitem[{Koch and De~Schamphelaere()}]{kochMakingSenseLifeHistory2021}
+\bibinfo{author}{Koch, J.}, \bibinfo{author}{De~Schamphelaere, K.A.C.}, .
+\newblock \bibinfo{title}{Making {{Sense}} of {{Life-History Effects}} of the
+  {{Antidepressant Citalopram}} in the {{Copepod Nitocra}} spinipes {{Using}} a
+  {{Bioenergetics Model}}} \bibinfo{volume}{40}, \bibinfo{pages}{1926--1937}.
+\newblock \DOIprefix\doi{10.1002/etc.5044}.
+%Type = Book
+\bibitem[{Kooijman()}]{kooijmanDynamicEnergyBudget2010}
+\bibinfo{author}{Kooijman, S.}, .
+\newblock \bibinfo{title}{Dynamic {{Energy Budget Theory}} for {{Metabolic
+  Organisation}}}.
+\newblock \bibinfo{publisher}{Cambridge University Press}.
+\newblock \href{http://arxiv.org/abs/R8OCVR9rOhUC}{{\tt arXiv:R8OCVR9rOhUC}}.
+%Type = Article
+\bibitem[{Prangle()}]{prangleAdaptingABCDistance2017}
+\bibinfo{author}{Prangle, D.}, .
+\newblock \bibinfo{title}{Adapting the {{ABC Distance Function}}}
+  \bibinfo{volume}{12}, \bibinfo{pages}{289--309}.
+\newblock \DOIprefix\doi{10.1214/16-BA1002}.
+%Type = Misc
+\bibitem[{Romoli et~al.()Romoli, Goussen, Weltje, Thorbek, Fort, Peake,
+  Kleinmann and Muller}]{romoliDynamicEnergyBudget2024}
+\bibinfo{author}{Romoli, C.}, \bibinfo{author}{Goussen, B.},
+  \bibinfo{author}{Weltje, L.}, \bibinfo{author}{Thorbek, P.},
+  \bibinfo{author}{Fort, D.}, \bibinfo{author}{Peake, B.},
+  \bibinfo{author}{Kleinmann, J.}, \bibinfo{author}{Muller, E.}, .
+\newblock \bibinfo{title}{Dynamic {{Energy Budget Modeling}} of {{Anuran
+  Metamorphosis}}}.
+\newblock \DOIprefix\doi{10.2139/ssrn.4893593}.
+%Type = Article
+\bibitem[{Weltje et~al.()Weltje, Simpson, Gross, Crane and
+  Wheeler}]{weltjeCOMPARATIVEACUTECHRONIC2013}
+\bibinfo{author}{Weltje, L.}, \bibinfo{author}{Simpson, P.},
+  \bibinfo{author}{Gross, M.}, \bibinfo{author}{Crane, M.},
+  \bibinfo{author}{Wheeler, J.R.}, .
+\newblock \bibinfo{title}{{{COMPARATIVE ACUTE AND CHRONIC SENSITIVITY OF FISH
+  AND AMPHIBIANS}}: {{A CRITICAL REVIEW OF DATA}}} \bibinfo{volume}{32},
+  \bibinfo{pages}{984--994}.
+\newblock \DOIprefix\doi{10.1002/etc.2149}.
+
+\end{thebibliography}

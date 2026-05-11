@@ -1,0 +1,4 @@
+endpoint,nrmsd,mre,species,substance,pmoa
+wetmass_mg,0.2971974628272431,0.4081156301267601,rana,C_end,M
+t_exp_G42,0.1414213562373095,0.005208333333333333,rana,C_end,M
+wetmass_G42_mg,2.263413107398025,-0.07810641431042435,rana,C_end,M

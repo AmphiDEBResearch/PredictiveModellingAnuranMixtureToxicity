@@ -1,0 +1,12 @@
+param,dist
+spc.Z,"Hyperdist(var""#339#340""(), Truncated(Normal{Float64}(μ=0.1, σ=0.1); lower=0.0, upper=Inf))"
+spc.dI_max_lrv,"Truncated(Normal{Float64}(μ=1.6, σ=0.3); lower=0.0, upper=Inf)"
+spc.k_M_emb,"Truncated(Normal{Float64}(μ=0.2, σ=0.1); lower=0.0, upper=Inf)"
+spc.eta_AS_emb,"Truncated(Normal{Float64}(μ=0.75, σ=0.75); lower=0.0, upper=1.0)"
+spc.H_j1,"Truncated(Normal{Float64}(μ=9.0, σ=4.5); lower=0.0, upper=Inf)"
+spc.gamma,"Truncated(Normal{Float64}(μ=0.5, σ=0.5); lower=0.0, upper=1.0)"
+spc.k_J_emb,"Truncated(Normal{Float64}(μ=0.05, σ=0.05); lower=0.0, upper=Inf)"
+spc.kappa_emb,"Truncated(Normal{Float64}(μ=0.8, σ=0.8); lower=0.1, upper=1.0)"
+spc.watercontent_larvae,"Truncated(Normal{Float64}(μ=0.94, σ=0.004); lower=0.0, upper=1.0)"
+spc.watercontent_juveniles,"Truncated(Normal{Float64}(μ=0.84, σ=0.042); lower=0.0, upper=0.93)"
+spc.time_since_birth,"Truncated(Normal{Float64}(μ=20.0, σ=2.0); lower=18.0, upper=22.0)"
