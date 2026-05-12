@@ -321,14 +321,14 @@ with the following rules for life stage transitions:
     \label{eq:lifestages}
 \end{align}%\todo{update life stage definitions}
 %
-Symbols for the parameters and state variables of the baseline model are listed in Table \ref{tab:all_params}.
+Symbols for the parameters and state variables of the baseline model are listed in Table \ref{tab:symbols_deb}.
 The values $y_G$, $y_M$, $y_A$ and $y_{\kappa}$ 
 are intermediate quantitites which account for the effects of stressors.
 {\begin{table}[ht]
     \caption{
         Parameters and state variables of the baseline DEB model.
     }
-    \label{tab:all_params}
+    \label{tab:symbols_deb}
     \begin{tabularx}{\textwidth}{llX}
         \hline
         Quantity & Unit & Description  \\ 
@@ -549,6 +549,7 @@ Effects on mass at GS 46 were under-predicted by both PMoAs,
 but less so by $M$. 
 We  therefore concluded that $M$ is the more plausible PMoA to explain effects of 2,4-D. 
 The associated MAPE was 22\% for the timing of GS 46 and 17\% for mass at GS 46. 
+The corresponding parameter values are reported in Table \ref{tab:params_24d}.
 
 \begin{figure}[!htb]
     \includegraphics[width=\textwidth]{CrossValidation_Discoglossus_24D_PMoA_comparison.png}
@@ -563,6 +564,20 @@ The associated MAPE was 22\% for the timing of GS 46 and 17\% for mass at GS 46.
     \label{fig:metamorps_24D}
 \end{figure}
 
+\begin{table}[h]
+    \caption{
+        TKTD parameter estimates for 2,4-D and PMoA $M$ (increase in maintenance costs).
+    }
+    \label{tab:params_24d}
+    \begin{tabularx}{\textwidth}{lllll}
+        \hline
+        Parameter & Best fit & Median & $P_{5}$ & $P_{95}$ \\ 
+        $k_{D}$ ($d^{-1}$) & 0.97 & 0.92 & 0.76 & 0.99 \\
+        $e$ ($mg\ L^{-1}$) & 28   & 16   & 8.2  & 27  \\
+        $b$ ($-$)          & 20   & 7.8  & 2.2 & 21
+    \end{tabularx}
+\end{table}
+
 \subsection{Cross-validation: Effects of Flupyradifurone at GS 46}
 
 Effects of Flupyradifurone on the timing of GS 46 were predicted well by PMoA $G$ (decrease in growth efficiency), but not by $\kappa$ (shift in resource allocation from growth to maturation). 
@@ -573,6 +588,7 @@ PMoA $\kappa$ implied that GS 46 would be reached sooner at high exposure concen
 which was not observed. PMoA $G$ correctly predicted that the timing of GS 46 is unaffected by Flupyradifurone exposure (Figure \ref{fig:metamorps_flupy}).
 Therefore, we concluded that the effects of Flupyradiforone were more likely caused by a decrease in growth efficiency,
 rather than a in the resource allocation from growth to maturation. 
+The corresponding parameter values are reported in Table \ref{tab:params_flp}.
 
 \begin{figure}[!htb]
     \includegraphics[width=\textwidth]{CrossValidation_Discoglossus_Flupyradifurone_PMoA_comparison.png}
@@ -587,6 +603,20 @@ rather than a in the resource allocation from growth to maturation.
     \label{fig:metamorps_flupy}
 \end{figure}
 
+
+\begin{table}[h]
+    \caption{
+        TKTD parameter estimates for Flupyradifurone and PMoA $G$ (decrease in growth efficiency).
+    }
+    \label{tab:params_flp}
+    \begin{tabularx}{\textwidth}{lllll}
+        \hline
+        Parameter & Best fit & Median & $P_{5}$ & $P_{95}$ \\ 
+        $k_{D}$ ($d^{-1}$) & 0.97 & 0.31 & 0.12 & 0.93 \\
+        $e$ ($mg\ L^{-1}$) & 89   & 79   & 14   & 151  \\
+        $b$ ($-$)          & 6.3  & 2.8  & 0.8  & 11   \\ 
+    \end{tabularx}
+\end{table}
 
 \subsection{Model validatiation: Predicting mixture effects}
 

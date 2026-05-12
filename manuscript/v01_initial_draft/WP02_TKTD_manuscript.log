@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.2)  11 MAY 2026 16:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.2)  11 MAY 2026 17:15
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -685,59 +685,74 @@ File: plots/Discoglossus_Flupyradifurone_summaries_PMoA_comparison.png Graphic f
 Package pdftex.def Info: plots/Discoglossus_Flupyradifurone_summaries_PMoA_comparison.png  used on input line 532.
 (pdftex.def)             Requested size: 390.0pt x 233.96678pt.
  [9]
-<plots/CrossValidation_Discoglossus_24D_PMoA_comparison.png, id=264, 3377.61874pt x 1563.8425pt>
+<plots/CrossValidation_Discoglossus_24D_PMoA_comparison.png, id=265, 3377.61874pt x 1563.8425pt>
 File: plots/CrossValidation_Discoglossus_24D_PMoA_comparison.png Graphic file (type png)
 <use plots/CrossValidation_Discoglossus_24D_PMoA_comparison.png>
-Package pdftex.def Info: plots/CrossValidation_Discoglossus_24D_PMoA_comparison.png  used on input line 554.
+Package pdftex.def Info: plots/CrossValidation_Discoglossus_24D_PMoA_comparison.png  used on input line 555.
 (pdftex.def)             Requested size: 390.0pt x 180.5659pt.
- [10 <./plots/Discoglossus_24D_summaries_PMoA_comparison.png>]
-<plots/CrossValidation_Discoglossus_Flupyradifurone_PMoA_comparison.png, id=273, 3363.56625pt x 1554.80875pt>
+
+Underfull \hbox (badness 10000) in alignment at lines 578--578
+[][][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10 <./plots/Discoglossus_24D_summaries_PMoA_comparison.png>]
+<plots/CrossValidation_Discoglossus_Flupyradifurone_PMoA_comparison.png, id=275, 3363.56625pt x 1554.80875pt>
 File: plots/CrossValidation_Discoglossus_Flupyradifurone_PMoA_comparison.png Graphic file (type png)
 <use plots/CrossValidation_Discoglossus_Flupyradifurone_PMoA_comparison.png>
-Package pdftex.def Info: plots/CrossValidation_Discoglossus_Flupyradifurone_PMoA_comparison.png  used on input line 578.
+Package pdftex.def Info: plots/CrossValidation_Discoglossus_Flupyradifurone_PMoA_comparison.png  used on input line 594.
 (pdftex.def)             Requested size: 390.0pt x 180.2583pt.
-<plots/ModelValidation_Discoglossus_UCLM_mixture_growth.png, id=276, 3210.99625pt x 4013.99625pt>
+
+Underfull \hbox (badness 10000) in alignment at lines 618--618
+[][][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<plots/ModelValidation_Discoglossus_UCLM_mixture_growth.png, id=278, 3210.99625pt x 4013.99625pt>
 File: plots/ModelValidation_Discoglossus_UCLM_mixture_growth.png Graphic file (type png)
 <use plots/ModelValidation_Discoglossus_UCLM_mixture_growth.png>
-Package pdftex.def Info: plots/ModelValidation_Discoglossus_UCLM_mixture_growth.png  used on input line 606.
+Package pdftex.def Info: plots/ModelValidation_Discoglossus_UCLM_mixture_growth.png  used on input line 636.
 (pdftex.def)             Requested size: 390.0pt x 487.47739pt.
-<plots/ModelValidation_Discoglossus_UCLM_mixture_fracttadpoles.png, id=277, 3210.99625pt x 4013.99625pt>
+<plots/ModelValidation_Discoglossus_UCLM_mixture_fracttadpoles.png, id=279, 3210.99625pt x 4013.99625pt>
 File: plots/ModelValidation_Discoglossus_UCLM_mixture_fracttadpoles.png Graphic file (type png)
 <use plots/ModelValidation_Discoglossus_UCLM_mixture_fracttadpoles.png>
-Package pdftex.def Info: plots/ModelValidation_Discoglossus_UCLM_mixture_fracttadpoles.png  used on input line 619.
+Package pdftex.def Info: plots/ModelValidation_Discoglossus_UCLM_mixture_fracttadpoles.png  used on input line 649.
 (pdftex.def)             Requested size: 390.0pt x 487.47739pt.
 
-
-LaTeX Warning: Float too large for page by 22.92183pt on input line 631.
+LaTeX Warning: Float too large for page by 22.92183pt on input line 661.
 
 [11 <./plots/Discoglossus_Flupyradifurone_summaries_PMoA_comparison.png>]
-<plots/ModelValidation_Discoglossus_UCLM_mixture_metamorphs.png, id=288, 4015.0pt x 2007.5pt>
+<plots/ModelValidation_Discoglossus_UCLM_mixture_metamorphs.png, id=292, 4015.0pt x 2007.5pt>
 File: plots/ModelValidation_Discoglossus_UCLM_mixture_metamorphs.png Graphic file (type png)
 <use plots/ModelValidation_Discoglossus_UCLM_mixture_metamorphs.png>
-Package pdftex.def Info: plots/ModelValidation_Discoglossus_UCLM_mixture_metamorphs.png  used on input line 649.
+Package pdftex.def Info: plots/ModelValidation_Discoglossus_UCLM_mixture_metamorphs.png  used on input line 679.
 (pdftex.def)             Requested size: 390.0pt x 194.97232pt.
- [12 <./plots/CrossValidation_Discoglossus_24D_PMoA_comparison.png (PNG copy)>] [13 <./plots/CrossValidation_Discoglossus_Flupyradifurone_PMoA_comparison.png (PNG copy)>] [14] [15] [16] [17 <./plots/ModelValidation_Discoglossus_UCLM_mixture_growth.png>] [18 <./plots/ModelValidation_Discoglossus_UCLM_mixture_fracttadpoles.png>] [19 <./plots/ModelValidation_Discoglossus_UCLM_mixture_metamorphs.png>]
+ [12 <./plots/CrossValidation_Discoglossus_24D_PMoA_comparison.png (PNG copy)>] [13 <./plots/CrossValidation_Discoglossus_Flupyradifurone_PMoA_comparison.png (PNG copy)>] [14] [15] [16] [17] [18 <./plots/ModelValidation_Discoglossus_UCLM_mixture_growth.png>] [19 <./plots/ModelValidation_Discoglossus_UCLM_mixture_fracttadpoles.png>] [20 <./plots/ModelValidation_Discoglossus_UCLM_mixture_metamorphs.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.742 ...e \citet{hansulDynamicEnergyBudget2026}.}
+l.772 ...e \citet{hansulDynamicEnergyBudget2026}.}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.742 ...e \citet{hansulDynamicEnergyBudget2026}.}
-                                                   (./WP02_TKTD_manuscript.bbl [20
+l.772 ...e \citet{hansulDynamicEnergyBudget2026}.}
+                                                   (./WP02_TKTD_manuscript.bbl [21
 
 ]
 Underfull \hbox (badness 1286) in paragraph at lines 34--38
 \OT1/cmr/m/n/12 Ex-po-sure to Pes-ti-cides in Am-phib-ians: As-sess-ing the Ef-fects of
  []
 
-[21] [22])
+[22] [23])
 
 Package natbib Warning: There were undefined citations.
 
-[23] (./WP02_TKTD_manuscript.aux)
+[24] (./WP02_TKTD_manuscript.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -746,18 +761,18 @@ Package rerunfilecheck Info: File `WP02_TKTD_manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: 75035FA88BEC35AF4BB6466676872988;5523.
  ) 
 Here is how much of TeX's memory you used:
- 23108 strings out of 474222
- 428684 string characters out of 5748734
+ 23113 strings out of 474222
+ 428738 string characters out of 5748734
  1951975 words of memory out of 5000000
- 44863 multiletter control sequences out of 15000+600000
+ 44865 multiletter control sequences out of 15000+600000
  567573 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,18n,101p,1152b,673s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on WP02_TKTD_manuscript.pdf (25 pages, 4830688 bytes).
+Output written on WP02_TKTD_manuscript.pdf (26 pages, 4832960 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 410 compressed objects within 5 object streams
- 105 named destinations out of 1000 (max. 500000)
+ 498 PDF objects out of 1000 (max. 8388607)
+ 417 compressed objects within 5 object streams
+ 108 named destinations out of 1000 (max. 500000)
  248 words of extra memory for PDF output out of 10000 (max. 10000000)
 
