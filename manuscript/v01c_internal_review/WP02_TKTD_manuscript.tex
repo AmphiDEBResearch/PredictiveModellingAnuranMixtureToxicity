@@ -50,7 +50,7 @@
 % Affiliations should be keyed to the author's name with superscript numbers and be listed as follows: Laboratory, Institute, Department, Organization, City, State abbreviation (USA, Canada, Australia), and Country (without detailed address information such as city zip codes or street names).
 % If one of the authors has a change of address, list the new address below the correspondence details using a superscript symbol and use the same symbol to indicate the author in the author list.
 \def\Address{$^{1}$Institute of Mathematics, Universität Osnabrück, Germany \\
-$^{2}$Institute for Game and Wildlife Research, University Castilla-La Mancha, Spain \\
+$^{2}$Institute for Game and Wildlife Research, (IREC) UCLM-CSIC-JCCM, Ciudad Real, Spain \\
 $^{3}$European Food Safety Authority, Parma, Italy
 }
 % The Corresponding Author should be marked with an asterisk
@@ -94,7 +94,7 @@ Due to their specific life cycle, as well as susceptibility to anthropogenic and
 amphibians are of particular relevance for the environmental risk assessment of chemicals. 
 Therefore, we set out to develop a model that can account for toxic effects of chemical mixtures in amphibians, specifically anurans, 
 that integrates established toxicokinetic-toxicodynamic modelling principles with an amphibian-specific dynamic energy budget model (AmphiDEB-TKTD). 
-We calibrated the AmphiDEB-TKTD model to single-substance toxicity data for Flupyradifurone and 2,4-D in Discoglossus galganoi larvae, 
+We calibrated the AmphiDEB-TKTD model to single-substance toxicity data for Flupyradifurone and 2,4-D in \textit{Discoglossus galganoi} larvae, 
 and found that the model can reproduce observed effects on larval growth and metamorphosis traits. 
 Also, we could use the data to identify the underlying physiological modes of action (PMoA), 
 since growth and timing of metamorphosis are differentially affected through different PMoAs. 
@@ -103,14 +103,14 @@ and demonstrated that effects on Gosner stage 46 can be predicted from effects o
 if an appropriate PMoA has been identified. Concerning binary mixture toxicity, 
 the model correctly predicted a dominance effect of 2,4-D in a mixture with Flupyradifurone. 
 This can be explained through the different PMoAs of Flupyradifurone (decrease in growth efficiency) and 2,4-D (increase in maintenance costs), 
-which qualitatively differ in the severity of their effectsl, regarding the propagation to different apical endpoints. 
+which qualitatively differ in the severity of their effects, regarding the propagation to different apical endpoints. 
 We conclude that the AmphiDEB-TKTD model appears as a practical tool for the risk assessment of chemical mixtures for anurans, 
 while also being useful for the investigation of mechanisms of toxicity. 
 Since the model has been validated on a substance combination of different PMoAs, 
 further investigations should include the validation with substance combinations of identical PMoAs. 
 
 \tiny
- \keyFont{ \section{Keywords:} } %All article types: you may provide up to 8 keywords; at least 5 are mandatory.
+ \keyFont{ \section{Keywords: Dynamic Energy Budgets, Mechanistic Effect Modelling, Mixture toxicity, Pesticides, Amphibians} } %All article types: you may provide up to 8 keywords; at least 5 are mandatory.
 \end{abstract}
 
 
@@ -120,9 +120,8 @@ further investigations should include the validation with substance combinations
 Amphibians are currently not explicitly considered in the environmental risk assessment (ERA) of chemicals. 
 It is rather assumed that assessments based on aquatic vertebrates (e.g. fish) 
 and terrestric vertebrates (birds and mammals) are also protective for amphibians. 
-While amphibian larvae are in fact often less sensitive to chemicals 
-than amphibian aquatic stages \citep{weltjeCOMPARATIVEACUTECHRONIC2013}, 
-this is not the case for all chemicals \citep{glabermanEvaluatingRoleFish2019}, 
+While sensitivity of amphibian larvae to chemicals is often well correlated to that of fish \citep{weltjeCOMPARATIVEACUTECHRONIC2013}, 
+this does not apply to all chemicals \citep{glabermanEvaluatingRoleFish2019}, especially following long-term exposures.
 and the process of metamorphosis represents a vulnverable point in the life-hisory of amphibians, 
 which is not covered by using other vertebrates as proxies.\\
 Furthermore, environmental exposure occurrs in mixtures. 
@@ -149,13 +148,12 @@ individual's life-history:
 maintenance, growth, maturation and reproduction \citep{kooijmanDynamicEnergyBudget2010,jagerDEBkissQuestSimplest2013}.
 DEB models can be extended to account for the idiosyncracies of the amphibian life cycle 
 \citep{romoliDynamicEnergyBudget2025,hansulDynamicEnergyBudget2026} and
-effects of chemicals can be incorporated into DEB models by coupling them to a toxicokinetic-toxicodynamic (TKTD) submodel. 
+effects of chemicals can be incorporated into DEB models by coupling them to a toxicokinetic-toxicodynamic (TKTD) submodel 
+via physiological modes of action (PMoA). 
 These translate the external chemical exposure to an effect on the energy budgets, 
 e.g. a decrease in a conversion efficiency, increase in maintenance costs or change in resource allocation.
-\textit{A priori}, there is no good reason to deviate from 
-the standard approach for the application to amphibians. 
-In general, it can be necessary to include other PMoAs to explain 
-observed effects, 
+\textit{A priori}, there is no good reason to deviate from the standard approach for the application to amphibians. 
+In general, it can be necessary to include other PMoAs to explain observed effects, 
 or to consider the simultaneous action of multiple PMoAs \citep{kochMakingSenseLifeHistory2021}.
 While the toxicokinetic (TK) component can be expressed in different levels of detail, 
 the most common approach in the context of DEB-TKTD models is a reduced TK submodule, where the external concentration is directly linked to an abstract quantity 
@@ -422,29 +420,30 @@ The model was implemented in the Julia programming language. All software code i
 %
 \subsubsection{Parameter inference}
 %
-TKTD parameters were inferred from single-stressor effect data of 2,4-Dichlorpenoxyacetic acid (2,4-D) and Flupyradifurone \citep{gonzalez-lopezChronicExposurePesticides2026}.
+TKTD parameters were inferred from single-stressor effect data of 2,4-D and Flupyradifurone \citep{gonzalez-lopezChronicExposurePesticides2026}.
 For details on data generation and statistical analysis, see \citet{gonzalez-lopezChronicExposurePesticides2026}. 
-Chemical stressors were applied in there commercial formulations Primma \textregistered Dos and Sivanto \textregistered Prime, respectively.  \\ 
+Chemical stressors were applied in their commercial formulations Primma \textregistered Dos and Sivanto \textregistered Prime, respectively.  \\ 
 The calibration data consisted of time-resolved larval wet mass, 
-the time to reach Gosner stage (GS) 42 and the wet mass at GS 42. 
+the time to reach Gosner stage (GS, \citet{gosnerSimplifiedTableStaging1960}) 42 and the wet mass at GS 42. 
 The time to reach GS 42 was used as the time-resolved fraction 
-of tadpoles, calculated as the number of survivors which have not yet reached GS 42, 
+of tadpoles, calculated as the number of survivors which had not yet reached GS 42, 
 relative to the total number of surivors at the given time point.
-An slower decrease in this value over time therefore indicates delayed metamorphosis, 
+A slower decrease in this value over time therefore indicates delayed metamorphosis, 
 unrelated to survival.  
-The highest tested 2,4-D treatment (100 $mg/L$) was omitted from the calibration, 
+The highest tested 2,4-D treatment (100 mg/L) was omitted from the calibration, 
 because it caused 100\% mortality quickly after the onset of exposure. 
 The presented analysis exclusively deals with sublethal effects.\\
 % 
 For each stressor, we pre-selected plausible PMoAs and separately fitted a TKTD model based on each PMoA. 
 The plausibility of PMoAs was evaluated by visual comparison.
 %
-All parameter inferences were done using population monte carlo approximate Bayesian computation 
+All parameter inferences were done using population Monte Carlo approximate Bayesian computation 
 (PMC-ABC \citep{beaumontAdaptiveApproximateBayesian2009}), 
-using the Eculidean distance as distance function, which is a default choice in ABC \citep{prangleAdaptingABCDistance2017}. 
+using the Euclidean distance as distance function, which is a default choice in ABC \citep{prangleAdaptingABCDistance2017}. 
 PMC-ABC is a practical choice because the model output was stochastic, 
 and PMC-ABC is well-suited to deal with stochasticity in model outputs. 
 Details on the PMC-ABC configuration are given in supporting information.\\
+\todo[inline]{alternatively refer to script file}
 %
 \subsubsection{Model cross-validation and PMoA selection}
 %
@@ -586,7 +585,7 @@ The corresponding parameter values are reported in Table \ref{tab:params_flp}.
         Variability in model output reflects individual variability. 
         G46 = developmental stage gosner stage 46.
         G = decrease in growth efficiency, $\kappa$ = decreased investment in growth/increased investment in maturation.  
-        MAPE = mean absolute percent error = mean relative error, calculated only for predictions. 
+        MAPE = mean absolute percent error, calculated only for predictions. 
         }
     \label{fig:metamorps_flupy}
 \end{figure}
@@ -651,9 +650,9 @@ which is generally in line with the observation that this treamtent caused 100\%
 \subsubsection{Predicting mixture effects on metamorphs}
 %
 Similarly to the result of the cross-validation, the model predicted 
-mixture effects on the timing of GS 46 with high accuracy, but low accuracy (Figure \ref{fig:mixture_metamorphs}). 
+mixture effects on the timing of GS 46 with high accuracy, but low precision (Figure \ref{fig:mixture_metamorphs}). 
 This coincided with a high mortality at the corresponding treatments. 
-The model predictions imply that individuals, if they would not have died from the epxosure, 
+The model predictions imply that individuals, if they would not have died from the exposure, 
 may have taken a long time to complete metamorphosis, given that they reach GS 42 at all. 
 Remarkably, the predicted variability in the timing of GS 46 was exclusively the result 
 of the simulated individual variability, with the degree of variability estimated from control data \citep{hansulDynamicEnergyBudget2026}.
@@ -723,7 +722,7 @@ In fact, the severity of lethal effects is highly life stage-specific \citep{gon
 with the highest mortality rate ocurring during metamorphosis, 
 manifesting metamorphosis as a bottleneck in the amphibian life history.\\ 
 Apart from direct lethal effects, the ecology of amphibians implies that sublethal effects in laboratory tests 
-may translate to letahl effects in the field.\\
+may translate to lethal effects in the field.\\
 In ephemeral wetlands such as those inhabited by \textit{D. galganoi},
 a delay in metamorphosis could lead to death if individuals fail to reach metamorphosis 
 before the aquatic habitat has dried out. 
@@ -748,19 +747,19 @@ The effects of a binary mixture of pesticides with different PMoAs could be pred
 \section*{Author Contributions}
 
 SH - Formal analysis, Investigation, Methodology, Software, Validation, Visualization, Writing - original draft;
-SGL - Data curation, resources, Writing - review \& editing;
+SGL - Data curation, resources;
 MOS - Funding acquisition, Project administration, Resources, Supervision, Writing - review \& editing;
-JLD - Conceptualization, Funding acquisition, project administration, supervision, Writing - review \& editing
+JLD - Conceptualization, Funding acquisition, project administration, supervision
 AF - Funding acquisition, Project administration, Resources, Supervision, Writing - review \& editing;
 
 \section*{Funding}
-This work was part of the AmphiDEB project fundend by the European Food Safety Authority.\todo[inline]{Jean-Lou, Manuel: Should a specific project number be added here?}
+This work was part of the AmphiDEB project fundend by the European Food Safety Authority (Ref. OC/EFSA/SCER/2021/12).
 
 \section*{Acknowledgments}
 We thank Sandrine Charles for fruitful discussion of the modelling approach.
 
 \section*{Supplemental Data}
- \href{http://home.frontiersin.org/about/author-guidelines#SupplementaryMaterial}{Supplementary Material} should be uploaded separately on submission, if there are Supplementary Figures, please include the caption in the same file as the figure. LaTeX Supplementary Material templates can be found in the Frontiers LaTeX folder.
+All supplemental data is available via \textbf{\color{red} INSERT LINK TO GITHUB REPO}.
 
 \section*{Data Availability Statement}
 The datasets [GENERATED/ANALYZED] for this study can be found in the [NAME OF REPOSITORY] [LINK].

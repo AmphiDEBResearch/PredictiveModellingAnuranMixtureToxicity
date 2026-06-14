@@ -3,45 +3,48 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: WP02_TKTD_manuscript.aux
 The style file: Frontiers-Harvard.bst
 Database file #1: PredictiveModellingChemicalToxicity.bib
+Warning--I didn't find a database entry for "kooijmanDynamicEnergyBudget2010"
+Warning--I didn't find a database entry for "efsapanelonplantprotectionproductsandtheirresiduespprScientificOpinionState2018a"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 26 entries,
+You've used 25 entries,
             3029 wiz_defined-function locations,
-            825 strings with 13148 characters,
-and the built_in function-call counts, 18428 in all, are:
-= -- 1586
-> -- 993
-< -- 10
-+ -- 487
-- -- 268
-* -- 1385
-:= -- 2735
-add.period$ -- 73
-call.type$ -- 26
-change.case$ -- 218
-chr.to.int$ -- 27
-cite$ -- 52
-duplicate$ -- 1133
-empty$ -- 1239
-format.name$ -- 341
-if$ -- 3715
+            823 strings with 13000 characters,
+and the built_in function-call counts, 18034 in all, are:
+= -- 1558
+> -- 983
+< -- 9
++ -- 485
+- -- 265
+* -- 1360
+:= -- 2665
+add.period$ -- 71
+call.type$ -- 25
+change.case$ -- 213
+chr.to.int$ -- 26
+cite$ -- 50
+duplicate$ -- 1101
+empty$ -- 1200
+format.name$ -- 337
+if$ -- 3633
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 266
-newline$ -- 191
-num.names$ -- 104
-pop$ -- 559
+missing$ -- 258
+newline$ -- 185
+num.names$ -- 100
+pop$ -- 545
 preamble$ -- 1
-purify$ -- 193
+purify$ -- 188
 quote$ -- 0
-skip$ -- 610
+skip$ -- 595
 stack$ -- 0
-substring$ -- 877
-swap$ -- 567
+substring$ -- 875
+swap$ -- 556
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 231
+type$ -- 225
 warning$ -- 0
-while$ -- 119
+while$ -- 117
 width$ -- 0
-write$ -- 419
+write$ -- 405
+(There were 2 warnings)

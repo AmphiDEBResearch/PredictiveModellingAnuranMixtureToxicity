@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{25}
 \providecommand{\natexlab}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
@@ -25,13 +25,6 @@ Beaumont, M.~A., Cornuet, J.-M., Marin, J.-M., and Robert, C.~P. (2009).
 \newblock \doi{10.1093/biomet/asp052}
 \bibAnnoteFile{beaumontAdaptiveApproximateBayesian2009}
 
-\bibitem[{{EFSA Panel on Plant Protection Products and their Residues (PPR)}(2018)}]{efsapanelonplantprotectionproductsandtheirresiduespprScientificOpinionState2018a}
-{EFSA Panel on Plant Protection Products and their Residues (PPR)} (2018).
-\newblock Scientific {{Opinion}} on the state of the art of {{Toxicokinetic}}/{{Toxicodynamic}} ({{TKTD}}) effect models for regulatory risk assessment of pesticides for aquatic organisms.
-\newblock \emph{EFSA Journal} 16, e05377.
-\newblock \doi{10.2903/j.efsa.2018.5377}
-\bibAnnoteFile{efsapanelonplantprotectionproductsandtheirresiduespprScientificOpinionState2018a}
-
 \bibitem[{Glaberman et~al.(2019)Glaberman, Kiwiet, and Aubee}]{glabermanEvaluatingRoleFish2019}
 Glaberman, S., Kiwiet, J., and Aubee, C.~B. (2019).
 \newblock Evaluating the role of fish as surrogates for amphibians in pesticide ecological risk assessment.
@@ -44,6 +37,12 @@ Glaberman, S., Kiwiet, J., and Aubee, C.~B. (2019).
 \newblock Chronic {{Exposure}} to {{Pesticides}} in {{Amphibians}}: {{Assessing}} the {{Effects}} of {{Flupyradifurone}} and 2,4-{{D}} on the {{Development}} of {{{\emph{Discoglossus}}}}{\emph{ galganoi}} and {{{\emph{Pelophylax}}}}{\emph{ perezi}}.
 \newblock \emph{Environmental Toxicology and Pharmacology} , 105039\doi{10.1016/j.etap.2026.105039}
 \bibAnnoteFile{gonzalez-lopezChronicExposurePesticides2026}
+
+\bibitem[{Gosner(1960)}]{gosnerSimplifiedTableStaging1960}
+Gosner, K.~L. (1960).
+\newblock A {{Simplified Table}} for {{Staging Anuran Embryos}} and {{Larvae}} with {{Notes}} on {{Identification}}.
+\newblock \emph{Herpetologica} 16, 183--190
+\bibAnnoteFile{gosnerSimplifiedTableStaging1960}
 
 \bibitem[{Hansul et~al.(2026)Hansul, Gonzalez~Lopez, {Ortiz-Santaliestra}, Dorne, and Focks}]{hansulDynamicEnergyBudget2026}
 [Dataset] Hansul, S., Gonzalez~Lopez, S., {Ortiz-Santaliestra}, M.~E., Dorne, J.-L., and Focks, A. (2026).
@@ -105,11 +104,6 @@ Koch, J. and De~Schamphelaere, K. A.~C. (2021).
 \newblock \emph{Environmental Toxicology and Chemistry} 40, 1926--1937.
 \newblock \doi{10.1002/etc.5044}
 \bibAnnoteFile{kochMakingSenseLifeHistory2021}
-
-\bibitem[{Kooijman(2010)}]{kooijmanDynamicEnergyBudget2010}
-Kooijman, S. (2010).
-\newblock \emph{Dynamic {{Energy Budget Theory}} for {{Metabolic Organisation}}} (Cambridge University Press)
-\bibAnnoteFile{kooijmanDynamicEnergyBudget2010}
 
 \bibitem[{Martin et~al.(2013)Martin, Jager, Nisbet, Preuss, {Hammers-Wirtz}, and Grimm}]{martinExtrapolatingEcotoxicologicalEffects2013}
 Martin, B.~T., Jager, T., Nisbet, R.~M., Preuss, T.~G., {Hammers-Wirtz}, M., and Grimm, V. (2013).
@@ -176,7 +170,7 @@ Weighman, K., Viaene, K., Koch, J., and De~Schamphelaere, K. (2023).
 
 \bibitem[{Weltje et~al.(2013)Weltje, Simpson, Gross, Crane, and Wheeler}]{weltjeCOMPARATIVEACUTECHRONIC2013}
 Weltje, L., Simpson, P., Gross, M., Crane, M., and Wheeler, J.~R. (2013).
-\newblock {{Comparative Acute and Chronic Sensitivity of Fish and Amphibians}}: {{A critical review of data}}.
+\newblock {{COMPARATIVE ACUTE AND CHRONIC SENSITIVITY OF FISH AND AMPHIBIANS}}: {{A CRITICAL REVIEW OF DATA}}.
 \newblock \emph{Environmental Toxicology and Chemistry} 32, 984--994.
 \newblock \doi{10.1002/etc.2149}
 \bibAnnoteFile{weltjeCOMPARATIVEACUTECHRONIC2013}
