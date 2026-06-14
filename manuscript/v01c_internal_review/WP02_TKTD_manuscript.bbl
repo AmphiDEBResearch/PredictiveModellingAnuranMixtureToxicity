@@ -1,0 +1,191 @@
+\begin{thebibliography}{26}
+\providecommand{\natexlab}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup \urlstyle{rm}\Url}\fi
+\providecommand{\selectlanguage}[1]{\relax}
+\providecommand{\bibAnnoteFile}[1]{%
+  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
+\providecommand{\bibAnnote}[2]{%
+  \begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ #2\end{quotation}}
+
+\bibitem[{Bart et~al.(2021)Bart, Jager, Robinson, Lahive, Spurgeon, and Ashauer}]{bartPredictingMixtureEffects2021}
+Bart, S., Jager, T., Robinson, A., Lahive, E., Spurgeon, D.~J., and Ashauer, R. (2021).
+\newblock Predicting {{Mixture Effects}} over {{Time}} with {{Toxicokinetic}}--{{Toxicodynamic Models}} ({{GUTS}}): {{Assumptions}}, {{Experimental Testing}}, and {{Predictive Power}}.
+\newblock \emph{Environmental Science \& Technology} 55, 2430--2439.
+\newblock \doi{10.1021/acs.est.0c05282}
+\bibAnnoteFile{bartPredictingMixtureEffects2021}
+
+\bibitem[{Beaumont et~al.(2009)Beaumont, Cornuet, Marin, and Robert}]{beaumontAdaptiveApproximateBayesian2009}
+Beaumont, M.~A., Cornuet, J.-M., Marin, J.-M., and Robert, C.~P. (2009).
+\newblock Adaptive approximate {{Bayesian}} computation.
+\newblock \emph{Biometrika} 96, 983--990.
+\newblock \doi{10.1093/biomet/asp052}
+\bibAnnoteFile{beaumontAdaptiveApproximateBayesian2009}
+
+\bibitem[{{EFSA Panel on Plant Protection Products and their Residues (PPR)}(2018)}]{efsapanelonplantprotectionproductsandtheirresiduespprScientificOpinionState2018a}
+{EFSA Panel on Plant Protection Products and their Residues (PPR)} (2018).
+\newblock Scientific {{Opinion}} on the state of the art of {{Toxicokinetic}}/{{Toxicodynamic}} ({{TKTD}}) effect models for regulatory risk assessment of pesticides for aquatic organisms.
+\newblock \emph{EFSA Journal} 16, e05377.
+\newblock \doi{10.2903/j.efsa.2018.5377}
+\bibAnnoteFile{efsapanelonplantprotectionproductsandtheirresiduespprScientificOpinionState2018a}
+
+\bibitem[{Glaberman et~al.(2019)Glaberman, Kiwiet, and Aubee}]{glabermanEvaluatingRoleFish2019}
+Glaberman, S., Kiwiet, J., and Aubee, C.~B. (2019).
+\newblock Evaluating the role of fish as surrogates for amphibians in pesticide ecological risk assessment.
+\newblock \emph{Chemosphere} 235, 952--958.
+\newblock \doi{10.1016/j.chemosphere.2019.06.166}
+\bibAnnoteFile{glabermanEvaluatingRoleFish2019}
+
+\bibitem[{{Gonz{\'a}lez-L{\'o}pez} et~al.(2026){Gonz{\'a}lez-L{\'o}pez}, Peir{\'o}, and {Ortiz-Santaliestra}}]{gonzalez-lopezChronicExposurePesticides2026}
+{Gonz{\'a}lez-L{\'o}pez}, S., Peir{\'o}, P., and {Ortiz-Santaliestra}, M.~E. (2026).
+\newblock Chronic {{Exposure}} to {{Pesticides}} in {{Amphibians}}: {{Assessing}} the {{Effects}} of {{Flupyradifurone}} and 2,4-{{D}} on the {{Development}} of {{{\emph{Discoglossus}}}}{\emph{ galganoi}} and {{{\emph{Pelophylax}}}}{\emph{ perezi}}.
+\newblock \emph{Environmental Toxicology and Pharmacology} , 105039\doi{10.1016/j.etap.2026.105039}
+\bibAnnoteFile{gonzalez-lopezChronicExposurePesticides2026}
+
+\bibitem[{Hansul et~al.(2026)Hansul, Gonzalez~Lopez, {Ortiz-Santaliestra}, Dorne, and Focks}]{hansulDynamicEnergyBudget2026}
+[Dataset] Hansul, S., Gonzalez~Lopez, S., {Ortiz-Santaliestra}, M.~E., Dorne, J.-L., and Focks, A. (2026).
+\newblock Dynamic energy budget modelling of anuran life-history with account for individual variability in developmental rates.
+\newblock \doi{10.2139/ssrn.6115398}
+\bibAnnoteFile{hansulDynamicEnergyBudget2026}
+
+\bibitem[{Jager(2011)}]{jagerGoodReasonsBan2011}
+Jager, T. (2011).
+\newblock Some {{Good Reasons}} to {{Ban ECx}} and {{Related Concepts}} in {{Ecotoxicology}}.
+\newblock \emph{Environmental Science \& Technology} 45, 8180--8181.
+\newblock \doi{10.1021/es2030559}
+\bibAnnoteFile{jagerGoodReasonsBan2011}
+
+\bibitem[{Jager(2020)}]{jagerRevisitingSimplifiedDEBtox2020}
+Jager, T. (2020).
+\newblock Revisiting simplified {{DEBtox}} models for analysing ecotoxicity data.
+\newblock \emph{Ecological Modelling} 416, 108904.
+\newblock \doi{10.1016/j.ecolmodel.2019.108904}
+\bibAnnoteFile{jagerRevisitingSimplifiedDEBtox2020}
+
+\bibitem[{Jager(2025)}]{jagerItsTimeMoving2025}
+Jager, T. (2025).
+\newblock It's about time: Moving away from statistical analysis of ecotoxicity data.
+\newblock \emph{Integrated Environmental Assessment and Management} , vjaf009\doi{10.1093/inteam/vjaf009}
+\bibAnnoteFile{jagerItsTimeMoving2025}
+
+\bibitem[{Jager and Klok(2010)}]{jagerExtrapolatingToxicEffects2010}
+Jager, T. and Klok, C. (2010).
+\newblock Extrapolating toxic effects on individuals to the population level: The role of dynamic energy budgets.
+\newblock \emph{Philosophical Transactions of the Royal Society B: Biological Sciences} 365, 3531--3540.
+\newblock \doi{10.1098/rstb.2010.0137}
+\bibAnnoteFile{jagerExtrapolatingToxicEffects2010}
+
+\bibitem[{Jager et~al.(2013)Jager, Martin, and Zimmer}]{jagerDEBkissQuestSimplest2013}
+Jager, T., Martin, B.~T., and Zimmer, E.~I. (2013).
+\newblock {{DEBkiss}} or the quest for the simplest generic model of animal life history.
+\newblock \emph{Journal of Theoretical Biology} 328, 9--18.
+\newblock \doi{10.1016/j.jtbi.2013.03.011}
+\bibAnnoteFile{jagerDEBkissQuestSimplest2013}
+
+\bibitem[{Jager et~al.(2010)Jager, Vandenbrouck, Baas, De~Coen, and Kooijman}]{jagerBiologybasedApproachMixture2010}
+Jager, T., Vandenbrouck, T., Baas, J., De~Coen, W.~M., and Kooijman, S. A. L.~M. (2010).
+\newblock A biology-based approach for mixture toxicity of multiple endpoints over the life cycle.
+\newblock \emph{Ecotoxicology} 19, 351--361.
+\newblock \doi{10.1007/s10646-009-0417-z}
+\bibAnnoteFile{jagerBiologybasedApproachMixture2010}
+
+\bibitem[{Jager and Zimmer(2012)}]{jagerSimplifiedDynamicEnergy2012}
+Jager, T. and Zimmer, E.~I. (2012).
+\newblock Simplified {{Dynamic Energy Budget}} model for analysing ecotoxicity data.
+\newblock \emph{Ecological Modelling} 225, 74--81.
+\newblock \doi{10.1016/j.ecolmodel.2011.11.012}
+\bibAnnoteFile{jagerSimplifiedDynamicEnergy2012}
+
+\bibitem[{Koch and De~Schamphelaere(2021)}]{kochMakingSenseLifeHistory2021}
+Koch, J. and De~Schamphelaere, K. A.~C. (2021).
+\newblock Making {{Sense}} of {{Life-History Effects}} of the {{Antidepressant Citalopram}} in the {{Copepod Nitocra}} spinipes {{Using}} a {{Bioenergetics Model}}.
+\newblock \emph{Environmental Toxicology and Chemistry} 40, 1926--1937.
+\newblock \doi{10.1002/etc.5044}
+\bibAnnoteFile{kochMakingSenseLifeHistory2021}
+
+\bibitem[{Kooijman(2010)}]{kooijmanDynamicEnergyBudget2010}
+Kooijman, S. (2010).
+\newblock \emph{Dynamic {{Energy Budget Theory}} for {{Metabolic Organisation}}} (Cambridge University Press)
+\bibAnnoteFile{kooijmanDynamicEnergyBudget2010}
+
+\bibitem[{Martin et~al.(2013)Martin, Jager, Nisbet, Preuss, {Hammers-Wirtz}, and Grimm}]{martinExtrapolatingEcotoxicologicalEffects2013}
+Martin, B.~T., Jager, T., Nisbet, R.~M., Preuss, T.~G., {Hammers-Wirtz}, M., and Grimm, V. (2013).
+\newblock Extrapolating ecotoxicological effects from individuals to populations: A generic approach based on {{Dynamic Energy Budget}} theory and individual-based modeling.
+\newblock \emph{Ecotoxicology} 22, 574--583.
+\newblock \doi{10.1007/s10646-013-1049-x}
+\bibAnnoteFile{martinExtrapolatingEcotoxicologicalEffects2013}
+
+\bibitem[{Pereira et~al.(2019)Pereira, Vlaeminck, Viaene, and De~Schamphelaere}]{pereiraUnexpectedAbsenceNickel2019}
+Pereira, C.~M., Vlaeminck, K., Viaene, K., and De~Schamphelaere, K.~A. (2019).
+\newblock The {{Unexpected Absence}} of {{Nickel Effects}} on a {{Daphnia Population}} at 3 {{Temperatures}} is {{Correctly Predicted}} by a {{Dynamic Energy Budget Individual}}-{{Based Model}}.
+\newblock \emph{Environmental Toxicology and Chemistry} 38, 1423--1433.
+\newblock \doi{10.1002/etc.4407}
+\bibAnnoteFile{pereiraUnexpectedAbsenceNickel2019}
+
+\bibitem[{Prangle(2017)}]{prangleAdaptingABCDistance2017}
+Prangle, D. (2017).
+\newblock Adapting the {{ABC Distance Function}}.
+\newblock \emph{Bayesian Analysis} 12, 289--309.
+\newblock \doi{10.1214/16-BA1002}
+\bibAnnoteFile{prangleAdaptingABCDistance2017}
+
+\bibitem[{Romoli et~al.(2025)Romoli, Goussen, Weltje, Thorbek, Fort, Peake et~al.}]{romoliDynamicEnergyBudget2025}
+Romoli, C., Goussen, B., Weltje, L., Thorbek, P., Fort, D.~J., Peake, B.~F., et~al. (2025).
+\newblock Dynamic energy budget modelling of anuran metamorphosis.
+\newblock \emph{Ecological Modelling} 501, 110936.
+\newblock \doi{10.1016/j.ecolmodel.2024.110936}
+\bibAnnoteFile{romoliDynamicEnergyBudget2025}
+
+\bibitem[{Romoli et~al.(2024{\natexlab{a}})Romoli, Jager, Trijau, Goussen, and Gergs}]{romoliEnvironmentalRiskAssessment2024}
+Romoli, C., Jager, T., Trijau, M., Goussen, B., and Gergs, A. (2024{\natexlab{a}}).
+\newblock Environmental {{Risk Assessment}} with {{Energy Budget Models}}: {{A Comparison Between Two Models}} of {{Different Complexity}}.
+\newblock \emph{Environmental Toxicology and Chemistry} 43, 440--449.
+\newblock \doi{10.1002/etc.5795}
+\bibAnnoteFile{romoliEnvironmentalRiskAssessment2024}
+
+\bibitem[{Romoli et~al.(2024{\natexlab{b}})Romoli, Trijau, Muller, Zakharova, Kuhl, Coors et~al.}]{romoliEnvironmentalRiskAssessment2024a}
+Romoli, C., Trijau, M., Muller, E.~B., Zakharova, L., Kuhl, R., Coors, A., et~al. (2024{\natexlab{b}}).
+\newblock Environmental {{Risk Assessment}} of {{Time}}-{{Variable Toxicant Exposure}} with {{Toxicokinetic}}--{{Toxicodynamic Modeling}} of {{Sublethal Endpoints}} and {{Moving Time Windows}}: {{A Case Study}} with {{Ceriodaphnia}} dubia.
+\newblock \emph{Environmental Toxicology and Chemistry} 43, 2409--2421.
+\newblock \doi{10.1002/etc.5975}
+\bibAnnoteFile{romoliEnvironmentalRiskAssessment2024a}
+
+\bibitem[{Sherborne and Galic(2020)}]{sherborneModelingSublethalEffects2020}
+Sherborne, N. and Galic, N. (2020).
+\newblock Modeling {{Sublethal Effects}} of {{Chemicals}}: {{Application}} of a {{Simplified Dynamic Energy Budget Model}} to {{Standard Ecotoxicity Data}}.
+\newblock \emph{Environmental Science \& Technology} 54, 7420--7429.
+\newblock \doi{10.1021/acs.est.0c00140}
+\bibAnnoteFile{sherborneModelingSublethalEffects2020}
+
+\bibitem[{Vlaeminck et~al.(2022)Vlaeminck, Viaene, Van~Sprang, and De~Schamphelaere}]{vlaeminckPredictingCombinedEffects2022}
+Vlaeminck, K., Viaene, K. P.~J., Van~Sprang, P., and De~Schamphelaere, K. A.~C. (2022).
+\newblock Predicting {{Combined Effects}} of {{Chemical Stressors}}: {{Population}}-{{Level Effects}} of {{Organic Chemical Mixtures}} with a {{Dynamic Energy Budget Individual}}-{{Based Model}}.
+\newblock \emph{Environmental Toxicology and Chemistry} 41, 2240--2258.
+\newblock \doi{10.1002/etc.5409}
+\bibAnnoteFile{vlaeminckPredictingCombinedEffects2022}
+
+\bibitem[{Weighman et~al.(2023)Weighman, Viaene, Koch, and De~Schamphelaere}]{weighmanUsingDynamicEnergy2023}
+Weighman, K., Viaene, K., Koch, J., and De~Schamphelaere, K. (2023).
+\newblock Using a dynamic energy budget model to investigate the physiological mode of action of lead ({{Pb}}) to {{{\emph{Lymnaea}}}}{\emph{ stagnalis}}.
+\newblock \emph{Aquatic Toxicology} 261, 106617.
+\newblock \doi{10.1016/j.aquatox.2023.106617}
+\bibAnnoteFile{weighmanUsingDynamicEnergy2023}
+
+\bibitem[{Weltje et~al.(2013)Weltje, Simpson, Gross, Crane, and Wheeler}]{weltjeCOMPARATIVEACUTECHRONIC2013}
+Weltje, L., Simpson, P., Gross, M., Crane, M., and Wheeler, J.~R. (2013).
+\newblock {{Comparative Acute and Chronic Sensitivity of Fish and Amphibians}}: {{A critical review of data}}.
+\newblock \emph{Environmental Toxicology and Chemistry} 32, 984--994.
+\newblock \doi{10.1002/etc.2149}
+\bibAnnoteFile{weltjeCOMPARATIVEACUTECHRONIC2013}
+
+\bibitem[{Zubrod et~al.(2024)Zubrod, Galic, Vaugeois, and Dreier}]{zubrodBioQSARs20Unlocking2024}
+Zubrod, J.~P., Galic, N., Vaugeois, M., and Dreier, D.~A. (2024).
+\newblock Bio-{{QSARs}} 2.0: {{Unlocking}} a new level of predictive power for machine learning-based ecotoxicity predictions by exploiting chemical and biological information.
+\newblock \emph{Environment International} 186, 108607.
+\newblock \doi{10.1016/j.envint.2024.108607}
+\bibAnnoteFile{zubrodBioQSARs20Unlocking2024}
+
+\end{thebibliography}
