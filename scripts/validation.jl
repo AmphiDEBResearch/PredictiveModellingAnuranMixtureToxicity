@@ -1,6 +1,7 @@
 include("boilerplate.jl")
 using DataFrames, DataFramesMeta, CSV 
 using StatsPlots, Plots.Measures
+using ProgressMeter
 default(leg = false)
 theme(:default)
 
@@ -11,14 +12,15 @@ const SAVETAG_FLPFIT = joinpath("Discoglossus_Flupyradifurone_2025-06-23_numtadp
 
 
 using EcotoxSystems, AmphiDEB
+
 include(scriptsdir("utils.jl"));
 includet(scriptsdir("Discoglossus_galganoi_mixture", "data.jl"))
 includet(scriptsdir("Discoglossus_galganoi_mixture", "parameters.jl"))
 includet(scriptsdir("Discoglossus_galganoi_mixture", "simulation.jl"))
 
 p = define_defaultparams_UCLM_mix()
-sims = [simulator_UCLM_mixture(p) for _ in 1:100];
-save_sims(sims, datadir("sims", "ModelValidation_Discoglossus_UCLM_mixture"))
+sims = @showprogress [simulator_UCLM_mixture(p) for _ in 1:100];
+save_sims(sims, datadir("sims", "ModelValidation_Discoglossus_UCLM_mixture"), "")
 
 plt = plot_data_UCLM_mix_growth()
 plot_sims_UCLM_mix_growth!(plt, sims)
@@ -33,7 +35,7 @@ savefig(plot(plt, dpi = 400), plotsdir("ModelValidation_Discoglossus_UCLM_mixtur
 display(plt)
 
 # extracting simulated metamorph data from simulation vector
-sim_metamorphs = extract_simkey(sims, :metamorphs)
+sim_metamorphs = EcotoxModelFitting.extract_simkey(sims, :metamorphs)
 leftjoin!(sim_metamorphs, TREATMENT_IDS_MIX, on = :treatment_id);
 
 # reading data

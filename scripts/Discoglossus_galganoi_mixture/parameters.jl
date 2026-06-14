@@ -6,7 +6,6 @@ function define_defaultparams_UCLM_mix(;
     posterior_summary_flpfit=datadir("sims", SAVETAG_FLPFIT, "posterior_summary.csv")
     )
 
-    # we need to reconstruct the parameter vector, because ComponentVector's cannot change their size dynamically
     p = ComponentVector(
         glb = ComponentVector(
             t_max = 56.0,
@@ -92,8 +91,7 @@ function define_defaultparams_UCLM_mix(;
     p.glb.dX_in = [1e10, 1e10] # ad libitum feeding conditions
 
     p.spc.Z = truncated(Normal(1, 0.1), 0, Inf)
-    # propagation of zoom factor to H_j1 is turned off => we want variability in the transition to metamorphs
-    p.spc.propagate_zoom.H_j1 = 0.
+    p.spc.propagate_zoom.H_j1 = 0. # propagation of zoom factor to H_j1 is turned off => we want variability in the transition to metamorphs
 
     # adding point estimates from calibrations as defaults
 
@@ -121,17 +119,15 @@ function define_defaultparams_UCLM_mix(;
         exceptions = OrderedDict()
         )
     
-    # for flp, we need to bump the stressor idx
-    postsum_flp = CSV.read(posterior_summary_flpfit, DataFrame) # get the parameters
-    set_stressor_idx!(postsum_flp, 2) # bump stressor index
-    CSV.write("postsum_flp.csv", postsum_flp) # save modified version to file, 
-    assign_values_from_file!(p, "postsum_flp.csv"; exceptions = OrderedDict()) # so that we can use this function, 
-    #rm("postsum_flp.csv") # remove the file
+    
+    postsum_flp = CSV.read(posterior_summary_flpfit, DataFrame)
+    set_stressor_idx!(postsum_flp, 2) # flp = stressor 2
+    CSV.write("postsum_flp.csv", postsum_flp) # dummy file for assigning parameters with correct stressor idx
+    assign_values_from_file!(p, "postsum_flp.csv"; exceptions = OrderedDict())
+    rm("postsum_flp.csv") # remove dummy file
 
     p.spc.k_M_juv = p.spc.k_M_emb
     p.spc.X_emb_int = 1. # ≈ initial dry mass of an egg (mg)
-
-    #p.spc.emb_dev_time = estimate_emb_dev_time(p)
 
     return p
 end
