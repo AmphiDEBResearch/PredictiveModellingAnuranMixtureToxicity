@@ -262,21 +262,31 @@ with the following rules for life stage transitions:
 \begin{align}
     embryo &= 
     \begin{cases}
-        \text{true} & \text{if } X_{emb}^{int} > 0 \\
-        0 & \text{otherwise}
+        \text{true} & \text{if } X^{emb}_{int} > 0 \\
+        \text{false} & \text{otherwise}
     \end{cases} \\
+    larva &= 
+    \begin{cases}
+        \text{true} & \text{if } X^{emb}_{int} = 0 \land H < H^j \\
+        \text{false} & \text{otherwise}
+    \end{cases}\\
+    metamorph &= 
+    \begin{cases}
+        \text{true} & \text{if } H \geq H^j \land E^{mt}>0 \\ 
+        \text{false} & \text{otherwise}
+    \end{cases}\\
     juvenile &= 
     \begin{cases}
-        \text{true} & \text{if } X_{emb}^{int} = 0 \land H < H^p \\ 
-        0 & \text{otherwise}
+        \text{true} & \text{if } H \geq H^j \land E^{mt}=0 \land H < H^p \\ 
+        \text{false} & \text{otherwise}
     \end{cases} \\
     adult &= 
     \begin{cases}
         \text{true} & \text{if } H \geq H^p \\ 
-        0 & \text{otherwise}
+        \text{false} & \text{otherwise}
     \end{cases}
-    \label{eq:lifestages}
-\end{align}%\todo{update life stage definitions}
+    \label{eq:lifestages_amphibians}
+\end{align}%
 %
 Symbols for the parameters and state variables of the baseline model are listed in Table \ref{tab:symbols_deb}.
 The values $y_G$, $y_M$, $y_A$ and $y_{\kappa}$ 
@@ -415,8 +425,8 @@ which would contradict the goals of the present study - or that all TKTD paramet
 from the combined single-stressor data, as previously done for lethal effect modelling \citep{bartPredictingMixtureEffects2021}. 
 The assumption of IA is therefore a plausible and practical starting point.
 %
-The model was implemented in the Julia programming language. All software code is available on github. 
-\todo[inline]{Link to a public repo will be entered here; Repository will be supplied as zip archive for review}
+The model was implemented in the Julia programming language. 
+A copy of the code repository is available as supporting information.
 %
 \subsubsection{Parameter inference}
 %
@@ -442,8 +452,7 @@ All parameter inferences were done using population Monte Carlo approximate Baye
 using the Euclidean distance as distance function, which is a default choice in ABC \citep{prangleAdaptingABCDistance2017}. 
 PMC-ABC is a practical choice because the model output was stochastic, 
 and PMC-ABC is well-suited to deal with stochasticity in model outputs. 
-Details on the PMC-ABC configuration are given in supporting information.\\
-\todo[inline]{alternatively refer to script file}
+The exact configurations of PMC-ABC runs are given in the calibration script files.\\
 %
 \subsubsection{Model cross-validation and PMoA selection}
 %
@@ -759,10 +768,10 @@ This work was part of the AmphiDEB project fundend by the European Food Safety A
 We thank Sandrine Charles for fruitful discussion of the modelling approach.
 
 \section*{Supplemental Data}
-All supplemental data is available via \textbf{\color{red} INSERT LINK TO GITHUB REPO}.
+The supplemental data includes all code and data used for this study.
 
 \section*{Data Availability Statement}
-The datasets [GENERATED/ANALYZED] for this study can be found in the [NAME OF REPOSITORY] [LINK].
+The datasets anylzed in this study are included in the code repository (Supplemental DAta).
 % Please see the availability of data guidelines for more information, at https://www.frontiersin.org/about/author-guidelines#AvailabilityofData
 
 \bibliographystyle{Frontiers-Harvard} %  Many Frontiers journals use the Harvard referencing system (Author-date), to find the style and resources for the journal you are submitting to: https://zendesk.frontiersin.org/hc/en-us/articles/360017860337-Frontiers-Reference-Styles-by-Journal. For Humanities and Social Sciences articles please include page numbers in the in-text citations 
@@ -772,7 +781,7 @@ The datasets [GENERATED/ANALYZED] for this study can be found in the [NAME OF RE
 %%% Make sure to upload the bib file along with the tex file and PDF
 %%% Please see the test.bib file for some examples of references
 
-\section*{Figure captions}
+%\section*{Figure captions}
 
 %%% Please be aware that for original research articles we only permit a combined number of 15 figures and tables, one figure with multiple subfigures will count as only one figure.
 %%% Use this if adding the figures directly in the mansucript, if so, please remember to also upload the files when submitting your article
