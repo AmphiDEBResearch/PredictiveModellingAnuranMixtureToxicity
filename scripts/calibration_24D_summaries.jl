@@ -5,10 +5,9 @@ using Revise
 const SAVETAG_LARVALFIT = "input/Discoglossus_larvae" # directory from which larval/metamorph parameters are loaded
 const SAVETAG_JUVENILEFIT = "input/Discoglossus_juveniles" # directory from which juvenile/adult parameters are loaded
 const SAVETAG = "Discoglossus_24D"
-
 using Revise
 
-includet(scriptsdir("ModelFitting_Discoglossus_24D_UCLM.jl")) 
+includet(scriptsdir("Discoglossus_galganoi_24D", "fit.jl")) 
 
 """
     p_opt_from_tag(savetag::AbstractString)

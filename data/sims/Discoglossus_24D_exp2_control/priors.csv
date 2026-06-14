@@ -1,3 +1,0 @@
-param,dist
-spc.Z_mean_UGent,"Truncated(Normal{Float64}(μ=0.8, σ=0.8); lower=0.1, upper=1.0)"
-spc.eta_AS_juv,"Truncated(Normal{Float64}(μ=0.9, σ=0.1); lower=0.0, upper=1.0)"
