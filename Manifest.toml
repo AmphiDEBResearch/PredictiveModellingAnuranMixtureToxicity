@@ -2,7 +2,7 @@
 
 julia_version = "1.11.2"
 manifest_format = "2.0"
-project_hash = "1b59efba8555ea7921c1fba96ef325661fa9acc8"
+project_hash = "a0087266a710a7c1e7bb65c4e331d20fcd62e111"
 
 [[deps.ADTypes]]
 git-tree-sha1 = "e2478490447631aedba0823d4d7a80b2cc8cdb32"
@@ -69,11 +69,9 @@ version = "1.1.3"
 
 [[deps.AmphiDEB]]
 deps = ["ComponentArrays", "DataFrames", "DataStructures", "Distributions", "EcotoxSystems", "OrdinaryDiffEq", "Parameters", "PrecompileTools", "StaticArrays", "StatsBase"]
-git-tree-sha1 = "9d698008ad0ad726592b987e7321a46d1841c21e"
-repo-rev = "main"
-repo-url = "https://github.com/simonhansul/amphideb.git"
+path = "lib/AmphiDEB"
 uuid = "eee04faf-3499-4765-a0c5-d172f1a51fe4"
-version = "0.3.8"
+version = "0.3.7"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -571,23 +569,19 @@ version = "1.6.0"
 
 [[deps.DrWatson]]
 deps = ["Dates", "FileIO", "JLD2", "LibGit2", "MacroTools", "Pkg", "Random", "Requires", "Scratch", "UnPack"]
-git-tree-sha1 = "17c9db646d6cb3f68a90053bf46faf5312d13b36"
+git-tree-sha1 = "5b6632df14cf24fc2cdb805aab24147001463336"
 uuid = "634d3b9d-ee7a-5ddf-bec9-22491ea816e1"
-version = "2.18.0"
+version = "2.19.1"
 
 [[deps.EcotoxModelFitting]]
 deps = ["CSV", "ComponentArrays", "DataFrames", "DataFramesMeta", "DataStructures", "Distributions", "DrWatson", "JLD2", "LaTeXStrings", "Latexify", "ProgressMeter", "StatsBase"]
-git-tree-sha1 = "66a8dac178bc3e7208338606d3fe038cdd5d6170"
-repo-rev = "main"
-repo-url = "https://github.com/simonhansul/ecotoxmodelfitting.jl.git"
+path = "lib/EcotoxModelFitting.jl"
 uuid = "11baf4a3-28f5-4d66-8f46-d015c3f5447c"
 version = "0.1.11"
 
 [[deps.EcotoxSystems]]
 deps = ["ComponentArrays", "DataFrames", "Distributions", "OrdinaryDiffEq", "Parameters", "PrecompileTools", "Random", "RecipesBase", "StaticArrays", "StatsBase"]
-git-tree-sha1 = "62f8cb3f583640ec4cbdabf639a86ab7e4f7ec9d"
-repo-rev = "main"
-repo-url = "https://github.com/simonhansul/ecotoxsystems.jl.git"
+path = "lib/EcotoxSystems.jl"
 uuid = "a070e96f-54e2-4e3c-8571-6208d1dd8981"
 version = "0.2.3"
 
@@ -2713,7 +2707,7 @@ uuid = "8e850ede-7688-5339-a07c-302acd2aaf8d"
 version = "1.59.0+0"
 
 [[deps.oneTBB_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl"]
+deps = ["Artifacts", "JLLWrappers", "LazyArtifacts", "Libdl"]
 git-tree-sha1 = "d5a767a3bb77135a99e433afe0eb14cd7f6914c3"
 uuid = "1317d2d5-d96f-522e-a858-c73665f53c3e"
 version = "2022.0.0+0"
