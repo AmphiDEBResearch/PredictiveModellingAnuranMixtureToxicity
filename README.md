@@ -1,4 +1,4 @@
-# Calibration and Validation of TKTD and pathogen effect models
+# Calibration and Validation of TKTD models for the anuran *Discoglossus galganoi* 
 
 Organization of this project:
 
