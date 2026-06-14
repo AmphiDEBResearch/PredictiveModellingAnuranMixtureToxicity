@@ -11,7 +11,6 @@ using Revise
 includet(scriptsdir("Discoglossus_galganoi_24D", "fit.jl")) 
 includet(scriptsdir("Discoglossus_galganoi_24D", "cross_validation.jl"))
 
-
 # ======================================== #
 # Predictions for PMoA M
 # ======================================== #
@@ -43,7 +42,7 @@ sim_opt_A = [f.simulator(p_opt) for _ in 1:100]
 # Plot data + all predictions 
 # ======================================== #
 
-plt = plot_metamorphs(
+plt = @edit plot_metamorphs(
     bottommargin = 10mm, leftmargin = 10mm
 )
 

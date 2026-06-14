@@ -79,7 +79,6 @@ function plot_metamorphs(
 
 end
 
-
 mean_relative_error(a,b) = mean(@. (a-b)/b)
 mape(a,b) = 100*mean(abs.(a .- b) ./ b)
 
