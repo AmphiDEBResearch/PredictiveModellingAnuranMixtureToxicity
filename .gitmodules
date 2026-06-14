@@ -1,0 +1,10 @@
+[submodule "lib/AmphiDEB"]
+	path = lib/AmphiDEB
+	url = https://github.com/amphidebresearch/AmphiDEB.git
+	branch = fixing-type-instab
+[submodule "lib/EcotoxSystems.jl"]
+	path = lib/EcotoxSystems.jl
+	url = https://github.com/simonhansul/ecotoxSystems.jl.git
+[submodule "lib/EcotoxModelFitting.jl"]
+	path = lib/EcotoxModelFitting.jl
+	url = https://github.com/simonhansul/ecotoxmodelfitting.jl
