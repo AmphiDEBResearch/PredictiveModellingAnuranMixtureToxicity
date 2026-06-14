@@ -5,6 +5,7 @@ datadir(args...) = joinpath(pwd(),  "data", args...)
 srcdir(args...) = joinpath(pwd(),  "src", args...)
 libdir(args...) = joinpath(pwd(),  "lib", args...)
 plotsdir(args...) = joinpath(pwd(), "plots", args...)
+notebooksdir(args...) = joinpath(pwd(), "notebooks", args...)
 
 Pkg.develop(path = libdir("EcotoxSystems.jl"))
 Pkg.develop(path = libdir("EcotoxModelFitting.jl"))

@@ -1,6 +1,7 @@
 using DataFrames 
 using Latexify
 using DataStructures
+import EcotoxModelFitting: Hyperdist
 
 function getjoinvars(f::ModelFit, i::Int64)
 
