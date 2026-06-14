@@ -1,9 +1,20 @@
+# ======================================== #
+# helper script to convert figures to tiff
+# ======================================== #
+
 using Pkg; Pkg.activate(".")
-Pkg.add("FileIO")
+using FileIO, ImageIO
 
+Pkg.add("ImageIO")
 
-using Glob 
+root = "manuscript/v01d_first_submission"
 
-listdir(".", "plots")
+files = readdir(root)
+pngs = filter(f->occursin(".png", f), files)
 
-save("output.tiff", load("input.png"))
+for png in pngs
+    name = split(png, ".")[1]
+    tiffname = join([name, ".tiff"])
+    save(joinpath(root, tiffname), load(joinpath(root, png)))
+end
+
