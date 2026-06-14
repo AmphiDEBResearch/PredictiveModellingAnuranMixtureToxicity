@@ -1,10 +1,10 @@
-# =================================================================================== #
+# ====================================================================================== #
 # Executes the entire analysis pipeline
 #
 # ⚠️ NOTE
 # - PMC runs will take multiple hours to execute
-# - Selection of PMoAs for cross-validation and validation is done manually
-# =================================================================================== #
+# - Selection of PMoAs for cross-validation and validation is done manually in scripts
+# ====================================================================================== #
 
 # ---- 2,4-D
 
