@@ -1,138 +1,126 @@
-using DataFrames, DataFramesMeta, CSV 
-using StatsPlots, Plots.Measures
-using EcotoxSystems, AmphiDEB
-using StatsBase
-default(leg = false)
-theme(:default)
+include(joinpath(pwd(), "notebooks", "boilerplate.jl"))
 
-include(srcdir("utils.jl"));
+const SAVETAG_LARVALFIT = "input/Discoglossus_larvae" # directory from which larval/metamorph parameters are loaded
+const SAVETAG_JUVENILEFIT = "input/Discoglossus_juveniles" # directory from which juvenile/adult parameters are loaded
+const SAVEDIR = "Discoglossus_24D_2025-06-23_numtadpoles" # directory from which TKTD parameters are loaded
+const SAVETAG_TKTD = "Discoglossus_24D" 
+const SAVETAG = "Discoglossus_24D"
 
-using Distances
-using OrdinaryDiffEq
+using Revise
 
-function aggregate_metamorphs(data)
+includet(scriptsdir("ModelFitting_Discoglossus_24D_UCLM.jl")) 
+includet(scriptsdir("CrossValidation_Discoglossus_24D_metamorphs.jl"))
 
-    metamorphs_aggregated = combine(groupby(data[:metamorphs], :treatment_id)) do df
-        return DataFrame(
-            t_exp_G46 = mean(df.t_exp_G46),
-            wetmass_G46_mg = mean(df.wetmass_G46_mg)
-        )
-    end
 
-    return metamorphs_aggregated
-end
+# ======================================== #
+# Predictions for PMoA M
+# ======================================== #
 
-function plot_metamorphs(
-    ;
-    xlabel = "2,4-D (mg/L)",
-    leftmargin = 7.5mm, 
-    bottommargin = 7.5mm, 
-    size = (1500,400)
+pmoa_idx = 2
+pmoa = PMOAS[pmoa_idx]
+f = setup_modelfit(pmoa); # reconstructing ModelFit instance
+
+using ProgressMeter
+p_opt = CSV.read(datadir("sims", SAVEDIR, "$(SAVETAG_TKTD)_$(pmoa)", "posterior_summary.csv"), DataFrame).best_fit
+sim_opt_M = @showprogress [f.simulator(p_opt) for _ in 1:100];
+
+quant_eval_M = quant_eval_metamorphs(f, sim_opt_M)
+
+# ======================================== #
+# Predictions for PMoA A
+# ======================================== #
+
+pmoa_idx = 3
+pmoa = PMOAS[pmoa_idx]
+f = setup_modelfit(pmoa);
+
+p_opt = CSV.read(datadir("sims", SAVEDIR, "$(SAVETAG_TKTD)_$(pmoa)", "posterior_summary.csv"), DataFrame).best_fit
+sim_opt_A = [f.simulator(p_opt) for _ in 1:100] 
+
+
+# ======================================== #
+# Plot data + all predictions 
+# ======================================== #
+
+plt = plot_metamorphs(
+    bottommargin = 10mm, leftmargin = 10mm
+)
+
+# ---- predictions for M
+
+sim = EcotoxModelFitting.extract_simkey(sim_opt_M, :metamorphs)
+sim_retro = @subset(sim, :treatment_id .== 1)
+sim_pred = @subset(sim, :treatment_id .> 1)
+
+@df sim_retro violin!(
+    plt, subplot = 1,
+    string.(:treatment_id), :t_exp_G46, 
+    side = :right,
+    fillalpha = .25,
+    color = :gray,
+    fillstyle = ://,
+    label = "Retrodicted",
+    title = "Timing of G46 \n MAPE = $(round(quant_eval_M.mape[1], sigdigits = 2))%"
     )
 
-    plt = @df f.data[:metamorphs] plot(    
-        violin(
-            string.(:treatment_id), :t_exp_G46, 
-            side = :left, 
-            xticks = (unique(:treatment_id) .- 0.5, unique(:C_W_1)), 
-            xrotation = 45
-            ), 
-        violin(
-            string.(:treatment_id), :wetmass_G46_mg,
-            side = :left,
-            xticks = (unique(:treatment_id) .- 0.5, unique(:C_W_1)),
-            xrotation = 45
-        ), 
-        layout = (1,4), 
-        leg = [true false false false], label = "Observed", 
-        fillcolor = :gray, markercolor = :black, fillalpha = .5,
-        ylabel = ["Time since \n start of experiment (d)" "Wet mass (mg)"], 
-        title = ["Timing of Gosner 46" "Mass at Gonser 46"], 
-        titlefontsize = 10, labelfontsize = 10, 
-        xlabel = xlabel,
-        leftmargin = leftmargin, 
-        bottommargin = bottommargin, 
-        size = size
+@df sim_pred violin!(
+    plt, subplot = 1,
+    string.(:treatment_id), :t_exp_G46, 
+    side = :right,
+    fillalpha = .25,
+    color = :steelblue,
+    label = "Predicted (M)"
     )
 
-    @df f.data[:metamorphs] dotplot!(
-        string.(:treatment_id), :t_exp_G46, 
-        side = :left, 
-        color = :black,
-        label = "", 
-        subplot = 1
+@df sim_retro violin!(
+    plt, subplot = 2,
+    string.(:treatment_id), :wetmass_G46_mg, 
+    side = :right,
+    fillalpha = .25,
+    color = :gray,
+    fillstyle = ://,
+    label = "Retrodicted",
+    title = "Timing of G46 \n MRE = $(round(quant_eval_M.mape[1], sigdigits = 2))%"
     )
 
-    @df f.data[:metamorphs] dotplot!(
-        string.(:treatment_id), :wetmass_G46_mg, 
-        side = :left, 
-        color = :black,
-        label = "", 
-        subplot = 2
+@df sim_pred violin!(
+    plt, subplot = 2,
+    string.(:treatment_id), :wetmass_G46_mg, 
+    side = :right,
+    fillalpha = .25,
+    color = :steelblue,
+    label = "Predicted (M)",
+    title = "Timing of G46 \n MAPE = $(round(quant_eval_M.mape[2], sigdigits = 2))%"
+    )
+  
+
+# ---- predictions for A
+
+sim = EcotoxModelFitting.extract_simkey(sim_opt_A, :metamorphs)
+sim_retro = @subset(sim, :treatment_id .== 1)
+sim_pred = @subset(sim, :treatment_id .> 1)
+
+@df sim_pred violin!(
+    plt, subplot = 1,
+    string.(:treatment_id), :t_exp_G46, 
+    side = :right,
+    fillalpha = .25,
+    color = :magenta,
+    label = "Predicted (A)",
     )
 
-    return plt
+@df sim_pred violin!(
+    plt, subplot = 2,
+    string.(:treatment_id), :wetmass_G46_mg, 
+    side = :right,
+    fillalpha = .25,
+    color = :magenta,
+    label = "Predicted (A)",
+    )    
 
-end
-
-
-mean_relative_error(a,b) = mean(@. (a-b)/b)
-mape(a,b) = 100*mean(abs.(a .- b) ./ b)
-
-function quant_eval_metamorphs(
-    f::ModelFit, 
-    sims::AbstractVector
+savefig(
+    plot(plt, dpi = 400), 
+    plotsdir("CrossValidation_Discoglossus_24D_PMoA_comparison.png")
     )
 
-    sims_df = map(x->x[:metamorphs], sims) |>
-    x -> [@transform(df, :num_sim = i) for (i,df) in enumerate(x)] |> 
-    x -> vcat(x...) |> 
-    x -> @transform(x, :treatment_id = [TREATMENT_IDS[c] for c in x.C_W_1]) |>
-    clean
-            
-    eval_df = leftjoin(
-        aggregate_metamorphs(f.data),
-        sims_df, 
-        on = :treatment_id, 
-        makeunique = true, 
-        renamecols = :_obs => :_pred
-    )
-
-    combine(groupby(eval_df, :num_sim_pred)) do df
-
-        df = @subset(df, :treatment_id .> 1)
-
-        mrevals = [
-            mean_relative_error(df.t_exp_G46_pred, df.t_exp_G46_obs),
-            mean_relative_error(df.wetmass_G46_mg_pred, df.wetmass_G46_mg_obs)
-        ]
-
-        mapevals = [
-            mape(df.t_exp_G46_pred, df.t_exp_G46_obs),
-            mape(df.wetmass_G46_mg_pred, df.wetmass_G46_mg_obs)
-        ]
-
-        nrmsdvals = [
-            nrmsd(df.t_exp_G46_pred, df.t_exp_G46_obs),
-            nrmsd(df.wetmass_G46_mg_pred, df.wetmass_G46_mg_obs)
-        ]
-
-        DataFrame(
-            endpoint = ["t_exp_G46", "wetmass_G46_mg"], 
-            mre = mrevals, 
-            mape = mapevals, 
-            nrmsd = nrmsdvals
-        )
-    end |> 
-    x -> combine(groupby(x, :endpoint)) do df
-        DataFrame(
-            mre = mean(df.mre),
-            mre_sd = std(df.mre),
-            nrmsd = mean(df.nrmsd),
-            nrmsd_sd = std(df.nrmsd),
-            mape = mean(df.mape),
-            mape_sd = std(df.mape)
-        )
-    end
-
-end
+display(plt)

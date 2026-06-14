@@ -1,6 +1,4 @@
-using DrWatson
-@quickactivate "."
-using Pkg; Pkg.instantiate()
+include("boilerplate.jl")
 
 using Revise
 

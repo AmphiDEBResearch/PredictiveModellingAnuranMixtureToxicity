@@ -7,7 +7,7 @@ default(leg = false)
 theme(:default)
 
 using EcotoxSystems, AmphiDEB
-include(srcdir("utils.jl"));
+include(scriptsdir("utils.jl"));
 
 using Revise
 # directory from which larval/metamorph parameters are loaded
@@ -17,7 +17,7 @@ const SAVETAG_JUVENILEFIT = "input/Discoglossus_juveniles"
 const SAVETAG = "Discoglossus_24D"
 using Revise
 
-include(notebooksdir("Discoglossus_galganoi_24D", "fit.jl")) 
+include(scriptsdir("Discoglossus_galganoi_24D", "fit.jl")) 
 
 # ======================================== #
 # Prior checks per PMoA

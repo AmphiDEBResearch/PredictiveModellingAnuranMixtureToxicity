@@ -30,8 +30,8 @@ import AmphiDEB: ComponentVector
 # source files
 
 using Revise
-includet(srcdir("traits.jl"))
-includet(srcdir("utils.jl"))
+includet(scriptsdir("traits.jl"))
+includet(scriptsdir("utils.jl"))
 
 # constants
 
