@@ -1,6 +1,4 @@
-using DrWatson
-@quickactivate "."
-#using Pkg; Pkg.instantiate()
+include("boilerplate.jl")
 
 using DataFrames, DataFramesMeta, CSV 
 using StatsPlots, Plots.Measures
@@ -8,7 +6,6 @@ default(leg = false)
 theme(:default)
 
 using EcotoxSystems, AmphiDEB
-include(scriptsdir("utils.jl"));
 
 using Revise
 
@@ -18,27 +15,44 @@ const SAVETAG = "Discoglossus_Flupyradifurone"
 
 using Revise
 
+include(scriptsdir("utils.jl"));
 includet(scriptsdir("Discoglossus_galganoi_Flupyradifurone", "fit.jl")) 
+
+# ======================================== #
+# Perior checks
+# ======================================== #
 
 f = setup_modelfit("A")
 
 prior_check = prior_predictive_check(f);
 
 plt = f.plot_data()
-plot_predictions!(plt, prior_check.predictions)
+plot_sims!(plt, prior_check.predictions)
 plt
+
+# ======================================== #
+# Model fits
+# ======================================== #
+
+# ---- PMoA G
 
 i = 1
 f = setup_modelfit(PMOAS[i]);
 
-@time @suppress global pmchist, posterior_check = fit_model!(
-    f; 
-    savetag = "$(SAVETAG)_$(PMOAS[i])",
+pmcsettings =  (
     n_init = 20_000, 
     n = 10_000, 
     t_max = 10, 
-    q_dist = .01,
+    q_dist = .01
+)
+
+@time @suppress pmchist, posterior_check = fit_model!(
+    f; 
+    pmcsettings = pmcsettings,
+    savetag = "$(SAVETAG)_$(PMOAS[i])",
 ); 
+
+# ---- PMoA κ
 
 i = 7
 f = setup_modelfit(PMOAS[i]);
@@ -46,8 +60,5 @@ f = setup_modelfit(PMOAS[i]);
 @time @suppress global pmchist, posterior_check = fit_model!(
     f; 
     savetag = "$(SAVETAG)_$(PMOAS[i])",
-    n_init = 20_000, 
-    n = 10_000, 
-    t_max = 10, 
-    q_dist = .01,
+    pmcsettings
 ); 

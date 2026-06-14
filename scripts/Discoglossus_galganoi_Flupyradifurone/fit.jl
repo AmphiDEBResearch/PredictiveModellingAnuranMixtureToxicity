@@ -13,8 +13,8 @@ function setup_modelfit(
     if !isdir(datadir("sims", SAVETAG))
         mkdir(datadir("sims", SAVETAG))
     end
+    
     # set up logger
-    # FIXME: this does not save the log file to the intended directory, because the setup_modelfit does not know the composite "savetag" 
     global io = open(datadir("sims", SAVETAG, "log.txt"), "w+")
     global logger = SimpleLogger(io)
 
