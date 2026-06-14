@@ -1,3 +1,8 @@
+# ========================================================== #
+# traits.jl
+# functions to infer traits from trajectories and parameters
+# ========================================================== #
+
 using DataFrames, DataFramesMeta
 using AmphiDEB.ComponentArrays
 
@@ -22,7 +27,6 @@ calc_E_mt_max(spc::ComponentVector) = (calc_S_max_lrv(spc)*spc.gamma)/(1-spc.gam
 Calculates maximum dry mass of larvae from parameters.
 """
 calc_Wdry_max_lrv(spc::ComponentVector) = calc_S_max_lrv(spc) + calc_E_mt_max(spc)
-
 
 
 """
