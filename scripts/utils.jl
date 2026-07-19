@@ -197,4 +197,5 @@ maximum(hyper::Hyperdist) = maximum(hyper.dist)
 pdf(hyper::Hyperdist, x) = pdf(hyper.dist, x)
 quantile(hyper::Hyperdist, q::Float64) = quantile(hyper.dist, q)
 
+import Base: rand
 rand(hyper::Hyperdist) = rand(hyper.dist)
