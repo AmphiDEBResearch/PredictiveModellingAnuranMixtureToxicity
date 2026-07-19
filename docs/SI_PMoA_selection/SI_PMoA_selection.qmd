@@ -5,7 +5,7 @@ subtitle: Supporting Information for "Predictive modelling of chemical mixture t
 
 ## Choice and interpretation of metrics
 
-We report mean absolute percentage error (MAPE) and Nash-Sutcliffe-Efficiency as additional metrics. 
+We report mean absolute percentage error (MAPE) and Nash-Sutcliffe-Efficiency (NSE) as additional metrics. 
 They are defined as:
 
 ```{=latex}
