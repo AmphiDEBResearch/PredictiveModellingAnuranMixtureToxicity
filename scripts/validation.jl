@@ -10,7 +10,6 @@ const SAVETAG_JUVENILEFIT = joinpath("input", "Discoglossus_juveniles")
 const SAVETAG_24DFIT = joinpath("Discoglossus_24D_2025-06-23_numtadpoles", "Discoglossus_24D_M")
 const SAVETAG_FLPFIT = joinpath("Discoglossus_Flupyradifurone_2025-06-23_numtadpoles", "Discoglossus_Flupyradifurone_G") 
 
-
 using EcotoxSystems, AmphiDEB
 
 include(scriptsdir("utils.jl"));
@@ -60,5 +59,58 @@ leftjoin!(
 # plotting data + predictions
 plt = plot_data_UCLM_mix_metamorphs()
 plot_sims_UCLM_mix_metamorphs!(plt, sims)
+
+plot!(plt, subplot = 4, ylim = (50, 350))
+plot!(plt, subplot = 5, ylim = (50, 350))
+plot!(plt, subplot = 6, ylim = (50, 350))
+
+ypos = 300
+let df = @subset(data[:metamorphs], :F_ppm .== 0)
+
+    offset = 0.5
+    n = nrow(@subset(df, :D_ppm .== 0) |> x-> x[completecases(x),:])
+    annotate!(1-offset, ypos, Plots.text("n=$n", 10), subplot = 4)
+    n = nrow(@subset(df, :D_ppm .== 0.03) |> x-> x[completecases(x),:])
+    annotate!(2-offset, ypos, Plots.text("n=$n", 10), subplot = 4)
+    n = nrow(@subset(df, :D_ppm .== 0.3) |> x-> x[completecases(x),:])
+    annotate!(3-offset, ypos, Plots.text("n=$n", 10), subplot = 4)
+    n = nrow(@subset(df, :D_ppm .== 3.0) |> x-> x[completecases(x),:])
+    annotate!(4-offset, ypos, Plots.text("n=$n", 10), subplot = 4)
+    n = nrow(@subset(df, :D_ppm .== 30) |> x-> x[completecases(x),:])
+    annotate!(5-offset, ypos, Plots.text("n=$n", 10), subplot = 4) 
+end
+
+let df = @subset(data[:metamorphs], :F_ppm .== 10)
+
+    offset = 0.5
+    n = nrow(@subset(df, :D_ppm .== 0) |> x-> x[completecases(x),:])
+    annotate!(1-offset, ypos, Plots.text("n=$n", 10), subplot = 5)
+    n = nrow(@subset(df, :D_ppm .== 0.03) |> x-> x[completecases(x),:])
+    annotate!(2-offset, ypos, Plots.text("n=$n", 10), subplot = 5)
+    n = nrow(@subset(df, :D_ppm .== 0.3) |> x-> x[completecases(x),:])
+    annotate!(3-offset, ypos, Plots.text("n=$n", 10), subplot = 5)
+    n = nrow(@subset(df, :D_ppm .== 3.0) |> x-> x[completecases(x),:])
+    annotate!(4-offset, ypos, Plots.text("n=$n", 10), subplot = 5)
+    n = nrow(@subset(df, :D_ppm .== 30) |> x-> x[completecases(x),:])
+    annotate!(5-offset, ypos, Plots.text("n=$n", 10), subplot = 5) 
+end
+
+let df = @subset(data[:metamorphs], :F_ppm .== 100)
+
+    offset = 0.5
+    n = nrow(@subset(df, :D_ppm .== 0) |> x-> x[completecases(x),:])
+    annotate!(1-offset, ypos, Plots.text("n=$n", 10), subplot = 6)
+    n = nrow(@subset(df, :D_ppm .== 0.03) |> x-> x[completecases(x),:])
+    annotate!(2-offset, ypos, Plots.text("n=$n", 10), subplot = 6)
+    n = nrow(@subset(df, :D_ppm .== 0.3) |> x-> x[completecases(x),:])
+    annotate!(3-offset, ypos, Plots.text("n=$n", 10), subplot = 6)
+    n = nrow(@subset(df, :D_ppm .== 3.0) |> x-> x[completecases(x),:])
+    annotate!(4-offset, ypos, Plots.text("n=$n", 10), subplot = 6)
+    n = nrow(@subset(df, :D_ppm .== 30) |> x-> x[completecases(x),:])
+    annotate!(5-offset, ypos, Plots.text("n=$n", 10), subplot = 6) 
+end
+
+# adjusting plot manually to report sample sizes
+
 savefig(plot(plt, dpi = 400), plotsdir("ModelValidation_Discoglossus_UCLM_mixture_metamorphs.png"))
 display(plt)

@@ -47,7 +47,7 @@ function plot_metamorphs(
             xticks = (unique(:treatment_id) .- 0.5, unique(:C_W_1)),
             xrotation = 45
         ), 
-        layout = (1,4), 
+        layout = (1,2), 
         leg = [true false false false], label = "Observed", 
         fillcolor = :gray, markercolor = :black, fillalpha = .5,
         ylabel = ["Time since \n start of experiment (d)" "Wet mass (mg)"], 

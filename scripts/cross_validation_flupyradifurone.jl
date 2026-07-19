@@ -27,7 +27,6 @@ sim_opt_G = @showprogress [f.simulator(p_opt) for _ in 1:100];
 
 quant_eval_G = quant_eval_metamorphs(f, sim_opt_G)
 
-
 # ---- PMoA κ
 
 pmoa_idx = 7
@@ -42,11 +41,36 @@ quant_eval_KAP = quant_eval_metamorphs(f, sim_opt_KAP)
 # ======================================== #
 # Generate plot
 # ======================================== #
+
+include(scriptsdir("Discoglossus_galganoi_Flupyradifurone/cross_validation.jl"))
+
 plt = plot_metamorphs(
     leftmargin = 10mm, 
     bottommargin = 10mm,
     xlabel = "Flupyradifurone (mg/L)"
     )
+plot!(plt, subplot = 1, leg = :bottomleft)
+
+# adjusting plot manually to include sample sizes
+plot!(subplot = 1, ylim = (10, 28))
+plot!(subplot = 2, ylim = (50, 350))
+
+# ---- sample size annotatons for timing of GS 46
+ypos = 26
+getn(treatment_id) =   nrow(@subset(f.data[:metamorphs], :treatment_id .== treatment_id)) 
+[annotate!(
+    i-0.75, ypos, Plots.text("n=$(getn(i))", 10), 
+    subplot = 1
+    ) for i in sort(unique(f.data[:metamorphs].treatment_id))]
+
+# ---- sample size annotations for mass at GS 46
+ypos = 300
+getn(treatment_id) =   nrow(@subset(f.data[:metamorphs], :treatment_id .== treatment_id)) 
+[annotate!(
+    i-0.75, ypos, Plots.text("n=$(getn(i))", 10), 
+    subplot = 2
+    ) for i in sort(unique(f.data[:metamorphs].treatment_id))]
+plt
 
 sim = EcotoxModelFitting.extract_simkey(sim_opt_G, :metamorphs) |> 
 x -> @transform(x, :treatment_id = denserank(:C_W_1))
@@ -99,6 +123,7 @@ x -> @transform(x, :treatment_id = denserank(:C_W_1))
 sim_retro = @subset(sim, :treatment_id .== 1)
 sim_pred = @subset(sim, :treatment_id .> 1)
 
+
 @df sim_pred violin!(
     plt, subplot = 1,
     string.(:treatment_id), :t_exp_G46, 
@@ -118,6 +143,8 @@ sim_pred = @subset(sim, :treatment_id .> 1)
     label = "Retrodicted",
     title = "Mass at G46 \n MAPE = $(round(quant_eval_G.mape[2], sigdigits = 2))%"
     )
+
+plot!(plt, size = (800,400))
 
 savefig(
     plot(plt, dpi = 400), 

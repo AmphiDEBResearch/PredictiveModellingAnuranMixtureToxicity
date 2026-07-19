@@ -42,9 +42,29 @@ sim_opt_A = [f.simulator(p_opt) for _ in 1:100]
 # Plot data + all predictions 
 # ======================================== #
 
-plt = @edit plot_metamorphs(
+plt = plot_metamorphs(
     bottommargin = 10mm, leftmargin = 10mm
 )
+plot!(subplot = 1, leg = :topleft)
+plot!(subplot = 1, ylim = (10, 80)) # adjusting plot manually to include sample sizes
+plot!(subplot = 2, ylim = (50, 350))
+
+# ---- sample size annotatons for timing of GS 46
+ypos = 55
+getn(treatment_id) =   nrow(@subset(f.data[:metamorphs], :treatment_id .== treatment_id)) 
+[annotate!(
+    i-0.75, ypos, Plots.text("n=$(getn(i))", 10), 
+    subplot = 1
+    ) for i in sort(unique(f.data[:metamorphs].treatment_id))]
+
+# ---- sample size annotations for mass at GS 46
+ypos = 300
+getn(treatment_id) =   nrow(@subset(f.data[:metamorphs], :treatment_id .== treatment_id)) 
+[annotate!(
+    i-0.75, ypos, Plots.text("n=$(getn(i))", 10), 
+    subplot = 2
+    ) for i in sort(unique(f.data[:metamorphs].treatment_id))]
+plt
 
 # ---- predictions for M
 
@@ -117,6 +137,8 @@ sim_pred = @subset(sim, :treatment_id .> 1)
     color = :magenta,
     label = "Predicted (A)",
     )    
+
+plot!(plt, size = (850,400))
 
 savefig(
     plot(plt, dpi = 400), 
