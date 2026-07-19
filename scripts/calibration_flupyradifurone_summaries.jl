@@ -52,10 +52,10 @@ lossvals_G = [loss_G(fG.data, sim) for sim in sim_opt_G]
 loss_KAP = generate_loss_function(fKAP)
 lossvals_KAP = [loss_KAP(fKAP.data, sim) for sim in sim_opt_KAP]
 
-histogram(
+pdists = histogram(
     lossvals_G, normalize = :pdf, 
     fillalpha = .25, label = "G", 
-    title = "Distances of accepted particles per PMoA \n (larval calibration data)", 
+    title = "Distances of accepted particles per PMoA \n (larval calibration data) \n n=$(length(lossvals_G))", 
     titlefontsize = 12, 
     xlabel = "distance", 
     ylabel = "density"
@@ -65,23 +65,19 @@ histogram!(
     normalize = :pdf, fillalpha = .25, label = "κ"
     )
 
-
 # ======================================================== #
 # Calculation of MAPE and NSE with bootstrapping
 # ======================================================== #
 
-MAPE(obs,sim) = mean(@. abs(100 * (sim - obs)/obs))
-NSE(obs, sim) = sum((obs .- sim) .^2) ./ sum(obs .- mean(obs).^2)
-
 using Random, Statistics, DataFrames
-includet("bootstrap_metrics.jl")
+include("bootstrap_metrics.jl")
 
-δG = get_metrics(fG, sim_opt_G) |> x->@transform(x, :pmoa = "G")
-δκ = get_metrics(fKAP, sim_opt_KAP) |> x->@transform(x, :pmoa = "KAP")
+δG = get_metrics(fG, sim_opt_G) |> x -> @transform(x, :pmoa = "G")
+δκ = get_metrics(fKAP, sim_opt_KAP) |> x -> @transform(x, :pmoa = "KAP")
 MAPE_CI_G = get_MAPE_CI(fG, sim_opt_G;   metric = :MAPE_wetmass, num_iters = 2000)|> 
-x->@transform(x, :pmoa = "G")
+x -> @transform(x, :pmoa = "G")
 MAPE_CI_KAP = get_MAPE_CI(fKAP, sim_opt_KAP;   metric = :MAPE_wetmass, num_iters = 2000) |> 
-x->@transform(x, :pmoa = "KAP")
+x -> @transform(x, :pmoa = "KAP")
 
 MAPE_CI = vcat(MAPE_CI_G, MAPE_CI_KAP) 
 
@@ -107,7 +103,8 @@ pMAPE = @df MAPE_CI groupedbar(
     string.(:C_W_1), :MAPE, 
     yerr = :MAPE_upper .- :MAPE_lower,
     group = :pmoa, bar_position = :dodge, 
-    label = ["G" "κ"], legendtitle = "PMoA",
+    label = ["G" "κ"], 
+    legendtitle = "PMoA",
     fillalpha = .5, 
     xlabel = "Treatment level (mg/L)", ylabel = "MAPE"
 )
@@ -116,8 +113,9 @@ pNSE = @df NSE_CI groupedbar(
     string.(:C_W_1), :NSE,
     yerr = :NSE_upper .- :NSE_lower,
     group = :pmoa, bar_position = :dodge,
-    fillalpha = .5, xlabel = "Treatment level (mg/L)", ylabel = "NSE", 
-    ylim = (-0.05, 0), leg = false
+    fillalpha = .5, xlabel = "Treatment level (mg/L)", ylabel = "NSE",
+    leg = false, 
+    #ylim = (-0.05, 0), leg = false
 )
 pMET = plot(
     pMAPE, pNSE, layout = (2,1), 
@@ -133,16 +131,6 @@ savefig(
         )
 
 # now the same for fraction of tadpoles
-
-
-metrics = combine(groupby(joined, [:C_W_1, :num_sim])) do df
-    return DataFrame(
-        MAPE_wetmass = MAPE(df.wetmass_mg_obs, df.wetmass_mg_sim), 
-        MAPE_fracttadpoles =  MAPE(df.fract_tadpoles_obs, df.fract_tadpoles_sim), 
-        NSE_wetmass = NSE(df.wetmass_mg_obs, df.wetmass_mg_sim), 
-        NSE_fracttadpoles = NSE(df.fract_tadpoles_obs, df.fract_tadpoles_sim), 
-        )
-end
 
 MAPE_CI_G_ft = get_MAPE_CI(fG, sim_opt_G;
     metric = :MAPE_fracttadpoles, num_iters = 2000
@@ -190,10 +178,13 @@ pNSE_ft = @df NSE_CI_ft groupedbar(
 
 pMET_ft = plot(
     pMAPE_ft, pNSE_ft, layout = (2,1),
-    title = ["Larval fraction tadpoles" ""],
+    title = ["Fraction of tadpoles" ""],
     bottommargin=5mm, topmargin=5mm, leftmargin=5mm,
     size = (500,750)
 )
 
 savefig(plot(pMET_ft, background=:transparent, dpi=300), plotsdir("flupy_metrics_fraction_tadpoles_larvae.png"))
 
+
+pMET_all = plot(pMET, pMET_ft, layout = (1,2), size = (800,800))
+savefig(plot(pMET_all, dpi=300), plotsdir("flupy_metrics_larvae.png"))

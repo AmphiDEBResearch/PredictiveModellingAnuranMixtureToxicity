@@ -7,26 +7,39 @@ using Random
 import Base.rand
 using StatsBase
 
+MAPE(obs,sim) = mean(@. abs(100 * (sim - obs)/obs))
+NSE(obs, sim) = begin
+
+    SSE = sum( (obs .- sim).^2 ) 
+    denom = sum( (obs .- mean(obs)).^2 )
+
+    1 - (SSE/denom)
+end
+
+nNSE(obs, sim) = 1/(2-NSE(obs, sim))
+
 """
 Compute quantitative metrics for aquatic data (larvae up to GS 42).
 
 """
 function get_metrics(f::ModelFit, sims::Vector)
 
+    # aggregate observations
     obs = combine(groupby(f.data[:aquatic], [:C_W_1, :t_exp])) do df 
         DataFrame(
-            :wetmass_mg = mean(df.wetmass_mg), 
-            :fract_tadpoles = mean(df.fract_tadpoles)
+            wetmass_mg = mean(df.wetmass_mg), 
+            fract_tadpoles = mean(df.fract_tadpoles)
         )
     end
 
+    # aggregate simulations
     sim = [@transform(x[:aquatic], :num = i) for (i,x) in enumerate(sims)] |> 
     x -> vcat(x...) |> 
-    x -> combine(groupby(sim, [:C_W_1, :t_exp])) do df
+    x -> combine(groupby(x, [:C_W_1, :t_exp])) do df
         df = @subset(df, isfinite.(:wetmass_mg), isfinite.(:fract_tadpoles))
         DataFrame(
-            :wetmass_mg = mean(df.wetmass_mg), 
-            :fract_tadpoles = mean(df.fract_tadpoles)
+            wetmass_mg = mean(df.wetmass_mg), 
+            fract_tadpoles = mean(df.fract_tadpoles)
         )
     end
 
